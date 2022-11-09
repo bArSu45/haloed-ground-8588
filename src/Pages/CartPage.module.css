@@ -1,0 +1,136 @@
+*{
+    font-family: sans-serif;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+.container>div{
+    padding: 1px;
+}
+.user_info{
+    line-height: 1px;
+    
+}
+.user_info>h6{
+    margin-top: 4px;
+    color: #333333;
+}
+.user_info>h4{
+    margin-top: 1px;
+    color: #333333;
+    font-family: 'Montserrat', sans-serif;
+}
+.cart_head{
+    padding: 39px 15px 10px;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+.cart_container{
+    display: flex;
+    padding: 35px 10px 100px;
+    margin-left: 7%;
+    margin-right: 7%;
+ 
+}
+.cart_products{
+width: 60%;
+font-family: 'Montserrat', sans-serif;
+}
+.product_text{
+    background-color:#fcffee;  
+    font-size: small;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.cart_summary{
+    width: 40%;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 10px;
+}
+.summary_text{
+    background-color:#fdd835;  
+    font-size: small;
+    border-radius: 5px;
+    padding: 2px;
+    padding-left: 20px;
+}
+.coupen{
+    border: 1px solid rgb(189, 187, 187);
+   padding-left: 10px;
+   padding-right: 10px;
+   margin: 18px 10px;
+border-radius: 4px;
+}
+.coupen>h4{
+   margin-top: 4px;
+   margin-bottom: 10px;
+   font-weight: 100;
+   font-family:  sans-serif;
+   color: rgb(99, 98, 98);
+   font-size: medium;
+}
+.redeem{
+    border: 1px solid rgb(189, 187, 187);
+    margin: 18px 10px;
+    padding: 10px;
+ display: flex;
+ justify-content: space-between;
+}
+.redeem_item{
+    background-color:  #ecf6f5;
+    color:  #6ba7a2;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+ display: flex;
+ justify-content: space-between;
+ font-size: small;
+}
+.price_summary{
+    border: 1px solid rgb(189, 187, 187);
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+.price_summary_title{
+    background-color: rgb(230, 224, 224);
+   padding: 10px;
+   font-size:13px;
+   font-weight: 400;
+}
+.price_summary_component{
+    display: flex;
+    justify-content: space-between;
+ padding-left: 10px;
+ padding-right: 10px;
+ line-height: 10px;
+   font-size:13px;
+   font-weight: 400;
+   color: rgb(99, 98, 98);
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+padding: 10px;
+ line-height: 10px;
+   font-size:13px;
+   font-weight: 400;
+   color: rgb(99, 98, 98);
+}
+.total>button{
+    background-color: teal;
+    color: white;
+    border: none;
+    outline: none;
+    padding-left: 90px;
+    padding-right: 90px;
+    border-radius: 8px;
+    font-size: medium;
+    font-weight: 400;
+}
