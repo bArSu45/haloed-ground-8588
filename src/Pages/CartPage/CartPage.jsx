@@ -1,5 +1,5 @@
 import React from 'react'
-import CartProduct from '../Components/CartProduct'
+import CartProduct from '../../Components/CartPage/CartProduct'
 import styles from './CartPage.module.css'
 
 const CartPage = () => {
