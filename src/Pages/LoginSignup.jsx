@@ -26,34 +26,38 @@ const LoginSignup = () => {
           </p>{" "}
         </div>
 
-        <div className="h-6 grid grid-cols-1 gap-4 content-center ..">
+        <div className="h-14 grid grid-cols-1 gap-4 content-center ..">
           {" "}
-          <div className="rounded-md border-2 border-regal-blue flex  ">
-            <div>+91</div>
+          <div className=" mt-28 ml-28 mr-28  w-13 rounded-md border-2 border-regal-blue flex h-14 content-center ">
+            <div className=" text-center p-3">+91</div>
             <input
-              type="text" value="" disabled class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-              focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
-              disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
-              invalid:border-pink-500 invalid:text-pink-600
-              focus:invalid:border-pink-500 focus:invalid:ring-pink-500
+              type="text" placeholder="ENTER MOBILE NUMBER"  class="  border-transparent
+               placeholder-font-bold
+              focus:outline-none focus:border-none focus:ring-color-#ffffff0d focus:ring-#ffffff0d
+             
+              
+             
             
               
              "
             />{" "}
           </div>
-          <div className="bg-#42a2a2 text-white text-center rounded-md font-bold">
-            <button>CONTINUE</button>{" "}
+          <div className="ml-28 mr-28  w-13 bg-#42a2a2 h-14 text-white text-center rounded-md font-bold">
+            <button className="m-auto mt-4">CONTINUE</button>{" "}
           </div>
         </div>
-        <div>OR</div>
-        <div className="rounded-md border-2 border-regal-blue flex  ">
-          continue with EMAIL
+        <div className=" pl-28 ml-48 mt-20 h-1  "> 
+        OR
+         </div>
+        
+        <div className=" content-center ml-28 mr-28  w-13 h-12 rounded-md border-2 border-regal-blue flex  ">
+          <span className=" m-auto"> CONTINUE WITH EMAIL</span>
         </div>
-        <div className="flex">
-          <div className="rounded-md border-2 border-regal-blue ">google</div>
-          <div className="rounded-md border-2 border-regal-blue ">facebook</div>
+        <div className="flex ml-28 mr-30">
+          <div className="   mr-2 h-10 w-15 pl-20 pr-20 rounded-md border-2 border-regal-blue ">google</div>
+          <div className="  h-10  w-15 pl-20 pr-20  rounded-md before:rounded-md border-2 border-regal-blue ">facebook</div>
         </div>
-        <p class="termsAndConditions">
+        <p class="termsAndConditions text-center">
           By creating an account or logging in, you agree with Bewakoof's
           <a
             href="https://www.bewakoof.com/terms-and-conditions"
