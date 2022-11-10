@@ -10,7 +10,7 @@ function App() {
   return (
     <>
     <Navbar/>
-      <CartPage/>
+      {/* <CartPage/> */}
       {/* <HomePage/>
       <LoginSignup/>
       <Login/> */}
