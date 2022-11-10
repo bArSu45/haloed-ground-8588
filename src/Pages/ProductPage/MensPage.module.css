@@ -1,0 +1,35 @@
+#mensPage_main_div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 55%;
+    gap: 20px;
+    margin: auto
+}
+#mensPage_grid_boxez{
+    border: 2px solid red;
+}
+#name_brand_div{
+    text-align: left;
+}
+#product_brand{
+    font-weight: 700;
+    font-size: 17px;
+    color: rgb(108, 106, 106);
+}
+#product_name{
+    font-size: 14px;
+
+}
+#price_div{
+    display: flex;
+}
+#discount_price{
+    font-size: 20px;
+    font-weight: 600;
+}
+#actual_price{
+    margin-left: 10px;
+    margin-top: 3px;
+    text-decoration: line-through;
+    color: grey;
+}
