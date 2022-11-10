@@ -1,0 +1,255 @@
+
+
+.container{
+    height: 80px;
+    /* width: 1349px; */
+    background-color: #FFFFFF;
+}
+.sub_container{
+    width: 1080px;
+    display: flex;
+    margin: auto;
+    height: 99%;
+    justify-content: space-between;
+}
+.first_div{
+    height: 200px;
+    width: 200px;
+    margin-top: -50px;
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+}
+.second_div{
+    height: 100%;
+    width: 922px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn{
+    background-color: #ff5c35;
+    width: 211px;
+    padding: 6.3px 10px;
+    border-radius: 5px;
+    color: white;
+    
+}
+.small_box{
+    width: 372px;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.dropdown{
+    cursor: pointer;
+    display: flex;
+  
+    font-weight: bold;
+    color: #000000e6;
+    font-size: 15px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    
+
+}
+.dropdown:hover{
+    text-decoration: underline;
+}
+
+.dropdown_content2 {
+    display: none;
+    position: absolute;
+    background-color:white;
+    z-index: 1;
+      /* margin-right: 300px; */
+      margin-left: -350px;
+      /* margin-top: 300px; */
+    margin-top: 40px;
+    height: 243px;
+    width: 725px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+    padding: 20px;
+    
+  }
+  .dropdown:hover .dropdown_content2 {
+    display: block;
+    
+  }
+  .head{
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: bold;
+
+
+  }
+  .sub_head{
+    display: grid;
+    font-size: 16px;
+    text-align: left;
+    margin-left: 35px;
+    gap: 20px;
+    font-weight: lighter;
+    margin-top: 15px;
+    width: 200px;
+    
+
+
+  }
+  .sub_head:hover{
+    text-decoration: underline;
+    color: rgb(75, 245, 188);
+    font-size: 15px;
+  }
+  .haw{
+   overflow: scroll;
+   overflow-y: hidden;
+    width: auto;
+    display: flex;
+    gap: 50px;
+  }
+
+  .dropdown_content3 {
+    position: absolute;
+    display: none;
+    position: absolute;
+    background-color:white;
+    z-index: 1;
+      /* margin-right: 300px; */
+      margin-left: -275px;
+      /* margin-top: 300px; */
+    margin-top: 40px;
+    height: 577px;
+    width: 1080px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+    padding: 20px;
+    background-color: #F6F6FC;
+    
+  }
+  .dropdown:hover .dropdown_content3 {
+    display: block;
+  }
+  .para_below{
+    height: 60px;
+    width: 280px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .para_head{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 30px;
+   
+    font-size: 14px;
+    color:#0B8484;
+    text-align: center;
+
+  }
+  .box_list{
+    height: 298px;
+    width: 870px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+  }
+  .list_box{
+    height: 132px;
+    width: 273px;
+    padding: 8px;
+    display: flex;
+    background-color: white;
+
+
+  }
+  .mini{
+    height: 24px;
+    width: 24px;
+  }
+.max{
+  display: grid;
+  text-align:left ;
+  margin-left: 15px;
+}
+.bottom{
+margin-top: 20px;
+height:60px ;
+width: 1061px;
+background-color: white;
+}
+.btn:hover{
+  background-color:rgb(252, 247, 247) ;
+}
+
+
+/* ///////////////// */
+
+.topcontainer{
+  width: 100%;
+  height: 27px;
+  background-color:#EEEEEE;
+}
+   
+.topmiddle_container{
+  height: 25px;
+  width: 1170px;
+  padding: 8px 0px 6px;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  font-size: 11px;
+  padding: 5px;
+  
+
+}
+.left_container{
+
+  height: 11px;
+  width: 150px;
+  color: #000000cc;
+  display: flex;
+  gap: 20px;
+}
+.right_container{
+height: 11px;
+width: 330px;
+color: #000000cc;
+display: flex;
+gap: 20px;
+
+}
+.content{
+  cursor: pointer;
+}
+.input{
+  height: 80px;
+  width: 488px;
+  border: 1px solid green;
+}
+.input1{
+  
+
+}
+.input_box{
+  background-color:#EEEEEE ;
+  padding: 0px 9px;
+  font-size: 10px;
+  height: 52px;
+  width: 319px;
+}
+    
+
+

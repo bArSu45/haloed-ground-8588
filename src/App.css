@@ -32,7 +32,68 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
+.active {
+  height: 4rem;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  transition: 0s linear;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  /* background-color: #FFFFFF;  border-bottom: 1px solid rgba(0, 0, 0, .1); */
+  z-index: 40;
+  /* box-shadow: 0 2px 5px -1px rgba(0, 0, 0, .08); */
+  /* padding: 0 7%; */
+  /* box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; */
+  border-bottom: 0.01px solid rgb(247, 243, 243);
+
+}
+
+.hidden {
+  height: 4rem;
+  width: 100%;
+  z-index: 40;
+  border-bottom: 0.5px solid rgb(247, 243, 243);
+  position: fixed;
+  top: -80px;
+  transition: 0s linear;
+  /* box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; */
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+
+*{
+  font-family: 'Lexend Deca', sans-serif;
+}
+.navbar {
+  position: fixed;
+  z-index: 999;
+  height: 62px;
+  width: 100%;
+  /* background-color: #ccc; */
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.main {
+  padding: 40px 20px;
+}
+.hello{
+ height: 200px;
+ width: 100%;
+ border: 1px solid red;
+}
+
+
+

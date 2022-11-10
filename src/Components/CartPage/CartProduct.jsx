@@ -14,7 +14,7 @@ const CartProduct = ({...item}) => {
      <div className={styles.description}>
      <div className={styles.description_right}>
         <p>Unisex Very Peri Tie & Dye T-Shirt</p>
-        <p><b>{item.price}</b>{item.mrp}</p>
+        <p><b>₹{item.price}</b><span className={styles.text_strike}>{item.mrp}</span></p>
         <span>{item.discount}</span>
      </div>
      <div className={styles.description_img}>
