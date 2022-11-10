@@ -11,19 +11,26 @@ const Login = () => {
   const navigate = useNavigate();
 
 //   const { auth, userLogin } = useContext(AppContext);
-
+var userData = JSON.parse(localStorage.getItem("signup"))
+console.log(userData)
   const handleSubmit = (e) => {
     //Default
     e.preventDefault();
-    if(email&&password){
-        dispatch(login({email,password}));
-        setEmail("");
-        setPassword("");
-        navigate("/vmvmmv")
-    }else{
-        navigate("/ssss") 
+console.log("dhdfh")
+    userData.forEach((user)=>{
+      if (userData === null) {
+        alert("please create an account")
+            // window.location.href = "index.html"
+    } else if (email === user.email && password === user.password) {
+        alert("successfull")
+        localStorage.setItem("signin", JSON.stringify(userData))
+        // window.location.href = "index.html"
+    } else {
+        alert("user dose not exist")
     }
-
+    
+    })
+   
   };
 //   "eve.holt@reqres.in",
 //   "password": "cityslicka"
