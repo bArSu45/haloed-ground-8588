@@ -1,23 +1,12 @@
 
+// import Router from 'json-server/lib/server/router';
+
 import './App.css';
-import CartPage from './Pages/CartPage/CartPage';
-import HomePage from './Pages/HomePage/HomePage';
-import LoginSignup from './Pages/LoginSignup';
-import Login from './Pages/Login'
+
+    
+     {/* <Otp />        */}
+<LoginSigup/>      
+<Login />
+<Signup/>
 
 
-function App() {
-  return (
-    <>
-
-      {/* <CartPage/> */}
-      {/* <HomePage/>
-      <LoginSignup/>
-      <Login/> */}
-      <Payment/>
-
-    </>
-  );
-}
-
-export default App;
