@@ -1,0 +1,171 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+.container>div{
+    padding: 1px;
+}
+.user_info{
+    line-height: 1px;
+    
+}
+.user_info>h6{
+    margin-top: 4px;
+    color: #333333;
+}
+.user_info>h4{
+    margin-top: 20px;
+    color: #333333;
+    font-family: 'Montserrat', sans-serif;
+}
+.head{
+    padding: 39px 15px 10px;
+    margin-left: 7%;
+    margin-right: 7%;
+    font-size: larger;
+    font-weight: 400;
+}
+.payment_component{
+    display: flex;
+   gap: 20px;
+    padding: 10px 15px;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+.payment_component_left{
+    border: 1px solid rgb(189, 187, 187);
+    width: 65%;
+display: flex;
+justify-content: space-between;
+}
+.card_heading{
+    width: 35%;
+}
+.card_all{
+    border-top:    1px solid rgb(189, 187, 187);
+  border-left:  1px solid rgb(189, 187, 187); 
+  border-bottom: 1px solid rgb(189, 187, 187);
+  background-color: #f7f7f7;
+  padding: 25px;
+}
+.card_selected{
+    border-top:    1px solid rgb(189, 187, 187);
+    border-left:  4px solid teal; 
+    border-bottom: 1px solid rgb(189, 187, 187);
+    padding: 25px;
+    font-weight: bolder;
+}
+.card_form{
+    /* border: 1px solid red; */
+    width: 65%;
+}
+.card_header{
+    display: flex;
+     gap: 10px;
+    padding: 20px;
+}
+.card_header>img{
+    /* width: 40px; */
+    height: 15px;
+}
+.input_card_form>div{
+    margin: 40px 30px;
+}
+.input_card_form>div>input {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: rgb(189, 187, 187);
+    width: 100%;
+  }
+  .input_card_form>div>input:focus {
+    border-color: rgb(189, 187, 187)
+  }
+.input_card_form_cvv{
+   display: flex;
+ justify-content: space-between;
+ gap: 20px;
+  }
+  .input_card_form_cvv>div>input{
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: rgb(189, 187, 187);
+    width: 100%;
+  }
+  .card_form_checkbox{
+    padding-left: 30px;
+    font-weight: 600;
+    font-size: medium;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: rgb(94, 92, 92);
+  }
+  .card_form_checkbox>label{
+    padding: 10px;
+  }
+  .card_form_text{
+    padding-left: 30px;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: rgb(189, 187, 187);
+  }
+  .card_form_button{
+    padding-left: 30px;
+    margin-top: 10px;
+  }
+  .card_form_button>button{
+    background-color: teal;
+    color: white;
+    border-radius: 4px;
+    padding: 10px 160px;
+  font-size: small;
+  
+  }
+.payment_component_right{
+    /* border: 1px solid red; */
+    border-left:  1px solid rgb(189, 187, 187); 
+    width: 35%;
+    padding: 10px;
+}
+.payment_component_address{
+    /* border: 1px solid red; */
+    /* font-weight: 400; */
+    font-size: 14px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: rgb(88, 86, 86);
+}
+.hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+    font-weight: bolder;
+}
+.payment_component_product{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+.payment_component_product>img{
+    width: 10%;
+}
+.payment_component_product>div{
+    width: 80%;
+}
+.payment_component_product>div>p>span{
+    color: rgb(103, 160, 18);
+}
+.payment_component_address_flex{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: rgb(88, 86, 86);
+    padding-top: 5px;
+}

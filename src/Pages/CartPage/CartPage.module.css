@@ -22,7 +22,7 @@
     color: #333333;
 }
 .user_info>h4{
-    margin-top: 1px;
+    margin-top: 20px;
     color: #333333;
     font-family: 'Montserrat', sans-serif;
 }
@@ -46,7 +46,7 @@ font-family: 'Montserrat', sans-serif;
     background-color:#fcffee;  
     font-size: small;
     border-radius: 5px;
-    padding: 2px;
+    padding: 10px;
 }
 
 .cart_summary{
@@ -58,7 +58,7 @@ font-family: 'Montserrat', sans-serif;
     background-color:#fdd835;  
     font-size: small;
     border-radius: 5px;
-    padding: 2px;
+    padding: 10px;
     padding-left: 20px;
 }
 .coupen{
@@ -87,8 +87,7 @@ border-radius: 4px;
     background-color:  #ecf6f5;
     color:  #6ba7a2;
     width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
+   padding: 10px;
     border-radius: 4px;
  display: flex;
  justify-content: space-between;
@@ -98,7 +97,7 @@ border-radius: 4px;
     border: 1px solid rgb(189, 187, 187);
     margin-left: 10px;
     margin-right: 10px;
-
+    margin-top: -20px;
 }
 .price_summary_title{
     background-color: rgb(230, 224, 224);
@@ -109,8 +108,7 @@ border-radius: 4px;
 .price_summary_component{
     display: flex;
     justify-content: space-between;
- padding-left: 10px;
- padding-right: 10px;
+padding: 10px 15px;
  line-height: 10px;
    font-size:13px;
    font-weight: 400;
@@ -120,7 +118,7 @@ border-radius: 4px;
     display: flex;
     justify-content: space-between;
 padding: 10px;
- line-height: 10px;
+ /* line-height: 10px; */
    font-size:13px;
    font-weight: 400;
    color: rgb(99, 98, 98);
