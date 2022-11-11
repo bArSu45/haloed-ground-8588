@@ -58,7 +58,7 @@ export default function Login() {
         // window.location.href = "index.html"
       } else if (userId === "@clickNbuy" && userpassword === "#clickNbuy") {
         alert("successfull");
-        navigate("/")
+        navigate("/admin")
         localStorage.setItem("username", JSON.stringify(name));
         // window.location.href = "index.html"
       } else {

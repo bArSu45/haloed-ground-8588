@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import styles from './AdminPage.module.css';
-const AddProduct = () => {
+const AdminPage = () => {
 
     const [mensData, setMensData] = useState([])
     const [product, setProduct] = useState({
@@ -89,4 +89,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default AdminPage;

@@ -215,7 +215,7 @@ const BottomNav = () => {
           <div className={b.second_div}>
             <div className={b.small_box}>
               <div className={b.dropdown}>
-                <p>Men</p>
+                <p> <Link to="/mens"> Men</Link> </p>
 
                 <div>
                   <div className={b.dropdown_content3}>
@@ -240,7 +240,7 @@ const BottomNav = () => {
               </div>
 
               <div className={b.dropdown}>
-                <p>Women</p>
+                <p> <Link to="/womens">Women</Link> </p>
 
                 <div>
                   <div className={b.dropdown_content33}>
@@ -283,7 +283,7 @@ const BottomNav = () => {
                       </div>
                       <div className={b.line}></div>
                       <div>
-                        <p>Other Brands</p>
+                        <p>Oth  er Brands</p>
                         <ul>
                           <li className={b.listitem}>Oppo</li>
                           <li className={b.listitem}>Huawei</li>
@@ -328,9 +328,9 @@ const BottomNav = () => {
                   <span className={b.icon}>
                     <BsHeart />
                   </span>
-                  <span className={b.icon}>
+                 <Link to="/cart"> <span className={b.icon}>
                     <BsBag />
-                  </span>
+                  </span></Link>
                   <span>
                     <img
                       height="40px"
