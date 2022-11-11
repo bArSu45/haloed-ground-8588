@@ -21,6 +21,7 @@
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
     "styled-component": "^2.8.0",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

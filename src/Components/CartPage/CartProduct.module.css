@@ -14,7 +14,7 @@ border-radius: 5px;
 padding: 10px 20px;
 display: flex;
 justify-content: space-between;
-line-height: 2px;
+/* line-height: 2px; */
 font-family: 'Montserrat', sans-serif;
 
 }
@@ -23,7 +23,7 @@ font-size: medium;
 color: rgb(34, 33, 33);
 }
 .offers_left{
-margin-top: 25px;
+margin-top: 15px;
 color: orange;
 font-weight: 400;
 
@@ -32,11 +32,15 @@ font-weight: 400;
     display: flex;
     justify-content: space-between;
     padding: 20px 10px;
-    line-height: 6px;
+    /* line-height: 6px; */
 font-family: 'Montserrat', sans-serif;
 }
 .description_right>p{
 font-size: medium;
+}
+.text_strike{
+    padding-left: 5px;
+    text-decoration: line-through;
 }
 .description_right>span{
     font-size: medium;
