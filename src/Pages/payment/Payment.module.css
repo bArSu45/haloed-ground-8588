@@ -169,3 +169,56 @@ justify-content: space-between;
     color: rgb(88, 86, 86);
     padding-top: 5px;
 }
+
+/* media query */
+@media (max-width:1150px){
+   
+    .payment_component{
+        display: flex;
+       gap: 20px;
+       flex-wrap: wrap;
+      
+    }
+    .payment_component_left{
+        width: 100%;
+
+    }
+  
+      .card_form_button>button{
+        padding: 10px 120px;
+      font-size: smaller;
+      
+      }
+    .payment_component_right{
+      width: 100%;
+        padding: 10px;
+    }
+    
+}
+@media (max-width:850px){
+    
+      .card_form_button{
+        padding-left: 10px;
+        margin-top: 5px;
+      }
+      .card_form_button>button{
+        padding: 10px 90px;
+      font-size: smaller;
+      
+      }
+    
+}
+@media (max-width:550px){
+ 
+  
+      .card_form_button>button{
+        padding:5px 60px;
+      font-size: smaller;
+      
+      }
+    .payment_component_right{
+      width: 100%;
+        padding: 5px;
+    }
+    
+}
