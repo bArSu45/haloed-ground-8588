@@ -1,20 +1,23 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-#product_sidebar_main_div{
+
+#product_sidebar_main_div {
     width: 90%;
     /* border: 3px solid blue; */
     display: flex;
     margin: auto;
 }
-#sidebar{
+
+#sidebar {
     width: 20%;
     /* border: 4px solid yellow; */
     position: fixed;
     height: 100vh;
     display: block;
 }
+
 #mensPage_main_div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -22,29 +25,33 @@
     gap: 20px;
     margin-left: 30%;
 }
-#name_brand_div{
+
+#name_brand_div {
     text-align: left;
 }
-#product_brand{
+
+#product_brand {
     font-weight: 700;
     font-size: 17px;
     color: rgb(108, 106, 106);
 }
-#product_name{
-    font-size: 14px;
 
+#product_name {
+    font-size: 14px;
 }
-#price_div{
+
+#price_div {
     display: flex;
 }
-#discount_price{
+
+#discount_price {
     font-size: 20px;
     font-weight: 600;
 }
-#actual_price{
+
+#actual_price {
     margin-left: 10px;
     margin-top: 3px;
     text-decoration: line-through;
     color: grey;
 }
-

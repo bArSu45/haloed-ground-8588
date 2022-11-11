@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { Box } from '@chakra-ui/react'
+import { Box, Button } from '@chakra-ui/react'
 import styles from './MensPage.module.css'
 
 export default function MensPage() {
@@ -31,6 +31,18 @@ export default function MensPage() {
     getMensData()
   }, [])
   console.log(mensData)
+
+const AddCartData=(data)=>{
+  axios.post("http://localhost:8080/cartdata",data).then((r)=>{
+
+  console.log(r.data)
+  }).
+  catch((e)=>{
+    console.log(e)
+  })
+}
+
+
   return (
     <div id={styles.product_sidebar_main_div}>
       <div id={styles.sidebar}>
@@ -68,6 +80,7 @@ export default function MensPage() {
                   <h1 id={styles.discount_price}>{item.discount_price_box}</h1>
                   <h1 id={styles.actual_price}>{item.actualPriceText}</h1>
                 </Box>
+                <Box><Button onClick={()=>AddCartData(item)} >add to cart</Button></Box>
               </Box>
             </div>
 
