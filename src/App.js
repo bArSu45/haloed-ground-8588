@@ -1,12 +1,16 @@
+import CartPage from "./Pages/CartPage/CartPage";
+import Payment from "./Pages/payment/Payment";
 
-// import Router from 'json-server/lib/server/router';
 
-import './App.css';
+function App() {
+  return (
+    <>
+     {/* <CartPage/> */}
+     <Payment />
+    </>
+  );
+}
 
-    
-     {/* <Otp />        */}
-<LoginSigup/>      
-<Login />
-<Signup/>
+export default App;
 
 
