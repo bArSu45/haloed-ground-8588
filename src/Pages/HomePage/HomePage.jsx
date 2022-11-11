@@ -1,10 +1,12 @@
-import { Box} from '@chakra-ui/react'
+import { Box, H1 } from '@chakra-ui/react'
 import React from 'react';
+import Navbar from '../../Components/Navbar';
 import styles from "./HomePage.module.css"
 
 export default function HomePage() {
     return (
         <div id={styles.Home_main_div}>
+            <Navbar/>
             <Box id={styles.official_merch_store}>
                 <Box>
                     <img src="https://images.bewakoof.com/uploads/grid/app/Oversized-sweatshirt-and-hoodies-1x1-m-1667798822.jpg" alt="" />
@@ -122,14 +124,14 @@ export default function HomePage() {
 
             <Box id={styles.discount_pe_discount_div}>
                 <h1>DISCOUNT PE DISCOUNT</h1>
-                <Box id={styles.discount_img_div}>
+                <Box className={styles.discount_img_div}>
                     <img className={styles.discount_img} src="https://images.bewakoof.com/uploads/grid/app/new-mid-banner-2022-buy2-at-599-1666352224.jpg" alt="" />
                     <img className={styles.discount_img} src="https://images.bewakoof.com/uploads/grid/app/new-mid-banner-2022-buy2at899-1667809501.jpg" alt="" />
                 </Box>
             </Box>
 
             <Box>
-                <Box id={styles.discount_img_div}>
+                <Box className={styles.discount_img_div}>
                     <img className={styles.discount_img} src="https://images.bewakoof.com/uploads/grid/app/new-mid-banner-2022-plussize-store-men-1666532800.jpg" alt="" />
                     <img className={styles.discount_img} src="https://images.bewakoof.com/uploads/grid/app/new-midsize-banner-AOP-pyjamas-m-1667827799.jpg" alt="" />
                 </Box>

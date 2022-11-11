@@ -1,12 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#product_sidebar_main_div{
+    width: 90%;
+    /* border: 3px solid blue; */
+    display: flex;
+    margin: auto;
+}
+#sidebar{
+    width: 20%;
+    /* border: 4px solid yellow; */
+    position: fixed;
+    height: 100vh;
+    display: block;
+}
 #mensPage_main_div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 55%;
+    width: 70%;
     gap: 20px;
-    margin: auto
-}
-#mensPage_grid_boxez{
-    border: 2px solid red;
+    margin-left: 30%;
 }
 #name_brand_div{
     text-align: left;
@@ -33,3 +47,4 @@
     text-decoration: line-through;
     color: grey;
 }
+

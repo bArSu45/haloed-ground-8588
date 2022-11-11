@@ -2,15 +2,18 @@ import CartPage from "./Pages/CartPage/CartPage";
 import Payment from "./Pages/payment/Payment";
 
 
-function App() {
+import React from 'react'
+import MainRoutes from './Pages/MainRoutes'
+
+const App = () => {
   return (
-    <>
-     {/* <CartPage/> */}
-     <Payment />
-    </>
-  );
+    <div>
+     <MainRoutes /> 
+    </div>
+  )
 }
 
-export default App;
+export default App
+
 
 

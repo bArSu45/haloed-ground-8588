@@ -31,4 +31,19 @@ const login = (payload) => (dispatch) => {
         })
 
 }
-export { login, postLoginRequest, postLoginSuccess, postLoginFailure };
+const postData = (payload) => (dispatch) => {
+    // dispatch(postRequest());
+    return axios.post('http://localhost:8080/products', {
+            name: payload.name,
+            catagary: payload.catagary,
+            image: payload.img,
+            price: payload.price
+        })
+        .then(function(response) {
+            console.log(response);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+}
+export { login, postLoginRequest, postLoginSuccess, postLoginFailure, postData };
