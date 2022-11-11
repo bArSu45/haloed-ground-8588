@@ -315,22 +315,6 @@ const BottomNav=()=> {
               </div>
 
           </div>
-          <hr className={b.line} />
-          <div className={b.bottom_nav}>
-            <div className={b.bottom_nav_container}>
-               
-                    <span className={b.bottom_nav_container_items}>HOT DEALS</span>
-                    <span className={b.bottom_nav_container_items}>MEN</span>
-                    <span className={b.bottom_nav_container_items}>WOMEN</span>
-                    <span className={b.bottom_nav_container_items}>ACCESSORIES</span>
-                    <span className={b.bottom_nav_container_items}>WINTERWEAR</span>
-                    
-
-              
-
-            </div>
-
-          </div>
 
       </>
   )
