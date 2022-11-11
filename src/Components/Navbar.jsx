@@ -3,8 +3,11 @@
 import React, { useEffect, useState } from 'react'
 import b from "./Navbar.module.css"
 import "../index.css"
-import { Link } from 'react-router-dom'
-import { CiMobile2 } from 'react-icons/ci';
+import { Link, NavLink } from 'react-router-dom'
+import { CiMobile2,CiSearch } from 'react-icons/ci';
+import { BsHeart,BsBag } from 'react-icons/bs';
+
+
 import logo from "../Assests/logo1.png"
 
 
@@ -32,37 +35,110 @@ const Navbar = ()=> {
     
 
 }
+const data1top="Top wear"
+const data2top="Bottom wear"
+const data3top="Winter wear"
 
-const data1={
-  url:"https://53.fs1.hubspotusercontent-na1.net/hubfs/53/WBZ-1165%20Global%20Nav%20Redesign/1-icon.svg",
-  heading:"Education",
-  p:[
-     
-      "Blog",
-      
-      "Ebooks ,Guides & More",
-      
-      "Free Courses & Certifications",
-      
-      "Inbound Methodology"
-  ]
+const data1=[
+    "Printed T-Shirts","Oversized T-shirts","Plain T-Shirts","Fashion T-Shirts","Activewear T-Shirts","Full Sleeve T-Shirts","Half Sleeve T-Shirts","Shirts","Vests","Co-ord Sets","Plain T-Shirts","Fashion T-Shirts","Activewear T-Shirts","Full Sleeve T-Shirts","Half Sleeve T-Shirts","Shirts","Vests","Co-ord Sets"
+]
+const img=[
+"https://images.bewakoof.com/nav_menu/icon-winter-1665155950.png","https://images.bewakoof.com/nav_menu/Circle-icon-space-collection-1666891198.png",
+"https://images.bewakoof.com/nav_menu/urban-collection-1660645934.png","https://images.bewakoof.com/nav_menu/Circle-Icon-Marvel-Youth-Beat-1653558342.png",
+"https://images.bewakoof.com/nav_menu/pride-icon-circle-1655695905.png",
+"https://images.bewakoof.com/nav_menu/play-1652947970.png",
+"https://images.bewakoof.com/nav_menu/icon-winter-1665155950.png","https://images.bewakoof.com/nav_menu/Circle-icon-space-collection-1666891198.png",
+"https://images.bewakoof.com/nav_menu/urban-collection-1660645934.png","https://images.bewakoof.com/nav_menu/Circle-Icon-Marvel-Youth-Beat-1653558342.png",
+"https://images.bewakoof.com/nav_menu/pride-icon-circle-1655695905.png",
+"https://images.bewakoof.com/nav_menu/play-1652947970.png",
+"https://images.bewakoof.com/nav_menu/icon-winter-1665155950.png","https://images.bewakoof.com/nav_menu/Circle-icon-space-collection-1666891198.png",
+"https://images.bewakoof.com/nav_menu/urban-collection-1660645934.png","https://images.bewakoof.com/nav_menu/Circle-Icon-Marvel-Youth-Beat-1653558342.png",
+"https://images.bewakoof.com/nav_menu/pride-icon-circle-1655695905.png",
+"https://images.bewakoof.com/nav_menu/play-1652947970.png",
+"https://images.bewakoof.com/nav_menu/icon-winter-1665155950.png","https://images.bewakoof.com/nav_menu/Circle-icon-space-collection-1666891198.png",
+"https://images.bewakoof.com/nav_menu/urban-collection-1660645934.png","https://images.bewakoof.com/nav_menu/Circle-Icon-Marvel-Youth-Beat-1653558342.png",
+"https://images.bewakoof.com/nav_menu/pride-icon-circle-1655695905.png",
+"https://images.bewakoof.com/nav_menu/play-1652947970.png",
+"https://images.bewakoof.com/nav_menu/icon-winter-1665155950.png","https://images.bewakoof.com/nav_menu/Circle-icon-space-collection-1666891198.png",
+"https://images.bewakoof.com/nav_menu/urban-collection-1660645934.png","https://images.bewakoof.com/nav_menu/Circle-Icon-Marvel-Youth-Beat-1653558342.png",
+"https://images.bewakoof.com/nav_menu/pride-icon-circle-1655695905.png",
+"https://images.bewakoof.com/nav_menu/play-1652947970.png"
+]
+const data2=[
+    "Winterwear Store",	"Winterwear Store","Space Collection"
+    ,"Space Collection ","Pokemon Collection", "Colour Splash Collection",	"Colour Splash Collection", "Design Of the Day",	"Design Of the Day Urban Collection",	"Urban CollectionUndrdawg by Bewakoof",	"Undrdawg by BewakoofPride Collection"	,
+    "Pride CollectionMarvel Youth Beat"
+    ,"Winterwear Store",	"Winterwear Store","Space Collection"
+    ,"Space Collection ","Pokemon Collection", "Colour Splash Collection",	"Colour Splash Collection", "Design Of the Day",	"Design Of the Day Urban Collection",	"Urban CollectionUndrdawg by Bewakoof",	"Undrdawg by BewakoofPride Collection"	,
+    "Pride CollectionMarvel Youth Beat","Winterwear Store",	"Winterwear Store","Space Collection"
+    ,"Space Collection ","Pokemon Collection", "Colour Splash Collection",	"Colour Splash Collection", "Design Of the Day",	"Design Of the Day Urban Collection",	"Urban CollectionUndrdawg by Bewakoof",	"Undrdawg by BewakoofPride Collection"	,
+    "Pride CollectionMarvel Youth Beat"
+]
+
+const List=({data1,data1top})=>{
+    return(
+        <>
+        <p className={b.heading}>
+            {data1top}
+        </p>
+        <ul>
+        {data1.map((item)=>(
+            <li className={b.listitem} >{item}</li>
+        ))}
+        </ul>
+        
+        </>
+    )
 }
-
-
-const List=({data})=>{
-  return(
-  <div>
-      <div className={b.head}>
-          <img src={data.url} alt="hello" />
-          <p>{data.heading}</p>
-      </div>
-      {data.p.map((item)=>(<p  className={b.sub_head}> {item}</p>))}
-
-  </div>
-
-
-  )
+const List2=()=>{
+    return(
+        <>
+        <p className={b.heading}>
+            Special
+        </p>
+        <ul>
+        {data2.map((item)=>(
+            <li className={b.listitem} >{item}</li>
+        ))}
+        </ul>
+        
+        </>
+    )
 }
+const List3=()=>{
+    return(
+        <>
+        <p className={b.heading}>
+            Special
+        </p>
+        <ul>
+        {img.map((item)=>(
+            <li className={b.listitem} ><img height="80px" width="80px" src={item} alt="" /></li>
+        ))}
+        </ul>
+        
+        </>
+    )
+}
+const brand1="Xiaomi"
+const brand2="Samsung"
+const brand3="Apple"
+const brand4="Realmi"
+const brand5="One Plus"
+
+const brand1data=[
+   " Mi 12 Pro 5G ","Redmi 9 Power" ,"Redmi 10A"
+]
+const brand2data=[
+    "SamsungSamsung Galaxy Note 10 lite ","Samsung Galaxy Note 10 Plus","Samsung Galaxy Note 10"
+]
+const brand3data=[
+   " OnePlus 9R", "OnePlus 9RT" ,"OnePlus 9"
+]
+
+
+
+
 
 
 const BottomNav=()=> {
@@ -102,79 +178,28 @@ const BottomNav=()=> {
                       <div className={b.small_box}>
                           <div className={b.dropdown}>
                               <p>Men</p>
-                              {/* <ChevronDownIcon marginTop="5px" /> */}
+                            
                               <div>
                                   <div className={b.dropdown_content3}>
-                                      <h3>The HubSpot CRM Platform</h3>
-                                      <p style={{fontSize:"14px",fontWeight:"lighter",marginTop:"15px"}}>All of HubSpot’s marketing, sales CRM, customer service, CMS, and operations software on one platform.</p>
-                                      <div className={b.para_head}>
-                                          {/* <div className={b.para_below}><span>Free HubSpot CRM</span><ArrowForwardIcon/></div> */}
-                                          {/* <div className={b.para_below}><span>overview of all products</span><ArrowForwardIcon/></div> */}
-                                      </div>
-                                      <div className={b.box_list}>
-                                          <div className={b.list_box}>
-                                              <div className={b.mini}><img src="https://www.hubspot.com/hubfs/product_icons_2022/MarketingHub_Icon_Gradient_RGB_24px.svg" alt="" /></div>
-                                              <div className={b.max}>
-                                                  <h4>Marketing Hub</h4>
-                                                  <p style={{fontSize:"14px",fontWeight:"lighter"}}>Marketing automation software.</p>
-                                                  <p style={{fontSize:"14px" ,fontWeight:"lighter"}}>Free and premium plans</p>
-                                              </div>
-                                              
+                                    <div className={b.hover_container}>
+                                    <div>
+                                        <List data1={data1} data1top={data1top}/>
+                                        
+                                    </div>
+                                    <div><List data1={data1} data1top={data2top} />
+                                        </div>
+                                    <div>
+                                    <List data1={data1} data1top={data3top} />
+                                        </div>
+                                    <div className={b.line}>
+                                        
+                                    </div>
+                                    <div> <List3/></div>
 
-                                          </div>
-                                          <div className={b.list_box}>
-                                              <div className={b.mini}><img src="https://www.hubspot.com/hubfs/product_icons_2022/SalesHub_Icon_Gradient_RGB_24px.svg" alt="" /></div>
-                                              <div className={b.max}>
-                                                  <h4>Sales Hub</h4>
-                                                  <p style={{fontSize:"14px",fontWeight:"lighter"}}>sales  software.</p>
-                                                  <p style={{fontSize:"14px" ,fontWeight:"lighter"}}>Free and premium plans</p>
-                                              </div>
-                                              
-
-                                          </div>
-
-                                          <div className={b.list_box}>
-                                              <div className={b.mini}><img src="https://www.hubspot.com/hubfs/product_icons_2022/MarketingHub_Icon_Gradient_RGB_24px.svg" alt="" /></div>
-                                              <div className={b.max}>
-                                                  <h4>Service Hub</h4>
-                                                  <p style={{fontSize:"14px",fontWeight:"lighter"}}>Marketing automation software.</p>
-                                                  <p style={{fontSize:"14px" ,fontWeight:"lighter"}}>Free and premium plans</p>
-                                              </div>
-                                              
-
-                                          </div>
-
-                                          <div className={b.list_box}>
-                                              <div className={b.mini}><img src="https://www.hubspot.com/hubfs/product_icons_2022/MarketingHub_Icon_Gradient_RGB_24px.svg" alt="" /></div>
-                                              <div className={b.max}>
-                                                  <h4>CMS Hub</h4>
-                                                  <p style={{fontSize:"14px",fontWeight:"lighter"}}>Marketing automation software.</p>
-                                                  <p style={{fontSize:"14px" ,fontWeight:"lighter"}}>Free and premium plans</p>
-                                              </div>
-                                              
-
-                                          </div>
-
-                                          <div className={b.list_box}>
-                                              <div className={b.mini}><img src="https://www.hubspot.com/hubfs/product_icons_2022/MarketingHub_Icon_Gradient_RGB_24px.svg" alt="" /></div>
-                                              <div className={b.max}>
-                                                  <h4>Operations Hub</h4>
-                                                  <p style={{fontSize:"14px",fontWeight:"lighter"}}>Marketing automation software.</p>
-                                                  <p style={{fontSize:"14px" ,fontWeight:"lighter"}}>Free and premium plans</p>
-                                              </div>
-                                              
-
-                                          </div>
-
-
-                                      </div>
-                                      <div className={b.bottom}>
-                                          <h4>App Marketplace</h4>
-                                          <p style={{fontSize:"14px",fontWeight:"lighter",marginTop:"15px"}}>connect your favorite apps to hubspot .see all integration at </p>
-                                      </div>
+                                    </div>
+                                    
+                                    
                                       
-                                      
-
 
                                   </div>
 
@@ -183,32 +208,80 @@ const BottomNav=()=> {
                               </div>
 
                           </div>
+                          
                           <div className={b.dropdown}>
                               <p>Women</p>
+                            
+                              <div>
+                                  <div className={b.dropdown_content33}>
+                                  <div className={b.hover_container}>
+                                    <div>
+                                        <List data1={data1} data1top={data1top}/>
+                                        
+                                    </div>
+                                    <div><List data1={data1} data1top={data2top} />
+                                        </div>
+                                    <div>
+                                    <List data1={data1} data1top={data3top} />
+                                        </div>
+                                    <div className={b.line}>
+                                        
+                                    </div>
+                                    <div> <List3/></div>
+
+                                    </div>
+                                      
+
+                                  </div>
+
+
+
+                              </div>
 
                           </div>
                           <div className={b.dropdown}>
                               <p>Mobile Covers</p>
-                              {/* <ChevronDownIcon marginTop="5px" /> */}
+                            
                               <div>
-                                  <div className={b.dropdown_content2}>
-                                      <div className={b.haw}>
-                                      <div><List data={data1}/></div>
-                                      <div><List data={data1}/></div>
-                                      <div><List data={data1}/></div>
-                                      <div><List data={data1}/></div>
-                                      <div><List data={data1}/></div>
-                                      </div>
-                                      
+                                  <div className={b.dropdown_content333}>
+                                  <p>Popular Brands</p>
+                                  <div className={b.hover_container}>
+                                    
+                                    <div>
+                                        <List data1={brand1data} data1top={brand1}/>
+                                        <List data1={brand3data} data1top={brand3}/>
+                                        
+                                    </div>
+                                    <div><List data1={brand2data} data1top={brand2} />
+                                    <List data1={brand2data} data1top={brand4} />
+                                    
+                                        </div>
+                                    <div>
+                                    <List data1={brand3data} data1top={brand5}/>
+                                        </div>
+                                    <div className={b.line}>
+                                        
+                                    </div>
+                                    <div> 
+                                        <p>Other Brands</p>
+                                        <ul>
+                                        <li className={b.listitem} >Oppo</li>
+                                        <li className={b.listitem} >Huawei</li>
+                                        <li className={b.listitem} >Moto</li>
+                                        </ul>
+                                        <Link to="/">See all devices</Link>
 
+                                    </div>
+                                    <div> 
+                                        <img height="350px" width="200px" src="https://images.bewakoof.com/nav_menu/bewakoof-online-fashion-COTM-mobile-cover-navigation-box-desktop-1612275399.jpg" alt="" />
+                                    </div>
+
+                                    </div>
+                                      
 
                                   </div>
 
 
-
-                              </div>
-
-                              <div>
 
                               </div>
 
@@ -220,9 +293,18 @@ const BottomNav=()=> {
                       <div>
                           <div className={b.input}>
                             <div className={b.input1}>
+                                <span style={{height:"18px",width:"18px"}}><CiSearch/></span>
                                 <input className={b.input_box} placeholder='search by product,category or collection' type="text" />
 
                             </div>
+                            <div className={b.login}>
+                                 <span style={{fontSize:"20px",fontWeight:"lighter"}}>I</span>
+                                 <span>Login</span>
+                                 <span className={b.icon}><BsHeart/></span>
+                                 <span className={b.icon}><BsBag/></span>
+                                 <span><img  height="40px" width="40px" src="https://illustoon.com/photo/910.png" alt="" /></span>
+                            </div>
+
                             <div>
 
                             </div>
@@ -233,8 +315,7 @@ const BottomNav=()=> {
               </div>
 
           </div>
-          
-<Link to="/login" >login</Link>
+
       </>
   )
 }
