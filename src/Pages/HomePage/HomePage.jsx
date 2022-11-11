@@ -1,10 +1,12 @@
 import { Box} from '@chakra-ui/react'
 import React from 'react';
+import Navbar from '../../Components/Navbar';
 import styles from "./HomePage.module.css"
 
 export default function HomePage() {
     return (
         <div id={styles.Home_main_div}>
+            <Navbar/>
             <Box id={styles.official_merch_store}>
                 <Box>
                     <img src="https://images.bewakoof.com/uploads/grid/app/Oversized-sweatshirt-and-hoodies-1x1-m-1667798822.jpg" alt="" />

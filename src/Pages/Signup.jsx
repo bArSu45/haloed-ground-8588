@@ -1,10 +1,12 @@
 import { Box, Button, Checkbox, Flex, Heading, Img, Input, InputGroup, InputRightElement, Text, VStack } from '@chakra-ui/react'
 import React, {  useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 
 
-function PasswordInput() {
-  const [show, setShow] = React.useState(false)
+function PasswordInput( {fnp,fn}) {
+  const [show, setShow] = useState(false)
   const handleClick = () => setShow(!show)
 
   return (
@@ -13,7 +15,8 @@ function PasswordInput() {
       variant='flushed'
         pr='4.5rem'
         type={show ? 'text' : 'password'}
-        placeholder='Enter password'
+        value={fnp}
+         placeholder='PASSWORD' onChange={fn}
       />
       <InputRightElement width='4.5rem'>
         <Button h='1.75rem' size='sm' onClick={handleClick}>
@@ -24,16 +27,20 @@ function PasswordInput() {
   )
 }
 
+
 export default function Signup() {
 
+const navigate=useNavigate()
  
+  var mobilesign = JSON.parse(localStorage.getItem("mobile"))
+  const dispatch=useDispatch()
   const [name, setName] = useState("");
-  const [mobile, setMobile] = useState("");
+  const [mobile, setMobile] = useState(mobilesign);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userdata, setUserdata] = useState([]);
 
-  const handleAddTodo = (name,mobile,email,password) => {
+  const postData = ({name,mobile,email,password}) => {
     const newItem = {
       name: name,
       mobile: mobile,
@@ -45,18 +52,18 @@ export default function Signup() {
     setUserdata([...userdata, newItem]);
   };
   const handleChange = (e) => {
-    setName(e.target.value);
-    setMobile(e.target.value);
-    setEmail(e.target.value);
-    setPassword(e.target.value);
-  };
-  const onClick = () => {
-    handleAddTodo(name,mobile,email,password);
+    e.preventDefault();
+    postData({name,mobile,email,password});
+    setName("");
+    setMobile('');
     setEmail("");
-   
+    setPassword("");
+    // localStorage.setItem("signup", JSON.stringify(userdata))
+  // navigate("/")
   };
-  localStorage.setItem("signup", JSON.stringify(userdata))
   
+  localStorage.setItem("signup", JSON.stringify(userdata))
+  // navigate("/")
  
   return (
     <Flex m={'auto'} w="100%" bg={"#fff8de"}>
@@ -71,17 +78,18 @@ export default function Signup() {
           </Heading>
           <Text fontSize={20} fontFamily="bold">Hi new buddy, let's get you started with the bewakoofi!</Text>
           <VStack spacing={10}>
-       
-          <Input variant='flushed' placeholder='NAME' />
-          <Input variant='flushed' placeholder='MOBILE' />
+       <form onSubmit={handleChange}>
+          <Input variant='flushed' placeholder='NAME' onChange={(e) =>  setName(e.target.value)} />
+          <Input variant='flushed' value={mobilesign} placeholder='MOBILE'onChange={(e) => setMobile(e.target.value)}  />
          
-          <Input  variant='flushed' placeholder='EMAIL' onChange={handleChange} />
-          <PasswordInput id="password"/>
+          <Input  variant='flushed' placeholder='EMAIL' onChange={(e) =>  setEmail(e.target.value)}/>
+          {/* <Input  variant='flushed' placeholder='PASSWORD' onChange={(e) => setPassword(e.target.value)} /> */}
+          <PasswordInput fnp={password} fn={(e) => setPassword(e.target.value)}/>
           <Checkbox colorScheme='teal' defaultChecked>
           I want to receive order updates on Whatsapp
   </Checkbox>
-          <Button  onClick={onClick} bg={"#989898"} w="120px" color={"white"}> PROCEED</Button>
-          
+          <Button  type='submit' bg={"#989898"} w="120px" color={"white"}> PROCEED</Button>
+          </form>
           </VStack>
         </Box>
       </Box>

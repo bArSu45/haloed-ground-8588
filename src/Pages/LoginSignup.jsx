@@ -1,52 +1,58 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const LoginSignup = () => {
+  const navigate = useNavigate();
   const [mobile, setMobile] = useState("");
-  var userData = JSON.parse(localStorage.getItem("signup"))
-console.log(userData)
+  var userData = JSON.parse(localStorage.getItem("signup"));
+
   const handleSubmit = (e) => {
     //Default
     e.preventDefault();
-console.log("dhdfh")
-    userData.forEach((user)=>{
+    console.log("dhdfh", mobile);
+    console.log(userData);
+    if (userData === null || userData.length === 0) {
+      localStorage.setItem("mobile", JSON.stringify(mobile));
+      navigate("/signup");
+    }
+    userData.forEach((user) => {
       if (userData === null) {
-        alert("please create an account")
-            // window.location.href = "index.html"
-    } else if (mobile === user.mobile) {
-      let otp1 = ''
-      function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
-    }
-    
-    for (let i = 0; i < 6; i++) {
-        otp1 += getRandomInt(9)
-    }
-    
-    console.log();
-    alert(`OTP -${otp1}`)
-        Navigate("/opt")
-        localStorage.setItem("signin", JSON.stringify(userData))
+        alert("please create an account");
         // window.location.href = "index.html"
-    } else {
-      Navigate("/signup")
-        alert("user dose not exist")
-    }
-    
-    })
-   
+      } else if (mobile === user.mobile) {
+        localStorage.setItem("mobile", JSON.stringify(mobile));
+        let otp1 = ''
+          function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+      
+        for (let i = 0; i < 4; i++) {
+            otp1 += getRandomInt(9)
+        }
+      
+        console.log();
+        alert(`OTP -${otp1}`)
+        localStorage.setItem("otp", JSON.stringify(otp1));
+        navigate("/mobile");
+
+        // window.location.href = "index.html"
+      } else {
+        navigate("/signup");
+        // alert("user dose not exist")
+      }
+    });
   };
-  let otp1 = ''
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
+  //   let otp1 = ''
+  //   function getRandomInt(max) {
+  //     return Math.floor(Math.random() * max);
+  // }
 
-for (let i = 0; i < 6; i++) {
-    otp1 += getRandomInt(9)
-}
+  // for (let i = 0; i < 6; i++) {
+  //     otp1 += getRandomInt(9)
+  // }
 
-console.log();
-alert(`OTP -${otp1}`)
+  // console.log();
+  // alert(`OTP -${otp1}`)
   return (
     <div className="flex montserrat-bold,sans-serif m-auto">
       <div className="w-200 m-10">
@@ -75,14 +81,14 @@ alert(`OTP -${otp1}`)
         <div className="h-14 grid grid-cols-1 gap-4 content-center ..">
           {" "}
           <form onSubmit={handleSubmit}>
-          <div className=" mt-28 ml-28 mr-28  w-13 rounded-md border-2 border-regal-blue flex h-14 content-center ">
-          
-            <div className=" text-center p-3">+91</div>
-
-            <input
-              value={mobile}
-              onChange={(e) => setMobile(e.target.value)}
-              type="text" placeholder="ENTER MOBILE NUMBER"  class="  border-transparent
+            <div className=" mt-28 mb-10 ml-28 mr-28  w-13 rounded-md border-2 border-regal-blue flex h-14 content-center ">
+              <div className=" text-center p-3 flex"> <span width="10px"><img width="40%" src="https://images.bewakoof.com/web/india-flag-round-1639566913.png" alt="" /></span>+91</div>
+              <input
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+                type="text"
+                placeholder="ENTER MOBILE NUMBER"
+                class=" mr-8  border-transparent
                placeholder-font-bold
               focus:outline-none focus:border-none focus:ring-color-#ffffff0d focus:ring-#ffffff0d
              
@@ -91,34 +97,47 @@ alert(`OTP -${otp1}`)
             
               
              "
-            />{" "}
-          </div>
-          <div className="ml-28 mr-28  w-13 bg-#42a2a2 h-14 text-white text-center rounded-md font-bold">
-            <button type="submit" className="m-auto mt-4">CONTINUE</button>{" "}
-          </div>
+              />{" "}
+            </div>
+            <div className="ml-28 mr-28  w-13 bg-#42a2a2 h-14 text-white text-center rounded-md font-bold">
+              <button type="submit" className="m-auto mt-4">
+                CONTINUE
+              </button>{" "}
+            </div>
           </form>
         </div>
-       
-        <div className=" pl-28 ml-48 mt-20 h-1  "> 
-        OR
-         </div>
-        
-        <div className=" content-center ml-28 mr-28  w-13 h-12 rounded-md border-2 border-regal-blue flex  ">
-          <span className=" m-auto"> CONTINUE WITH EMAIL</span>
+
+        <div className=" pl-28 ml-48 mt-20 h-1  ">OR</div>
+
+        <div className=" text-center content-center ml-28 mr-28  w-13 h-12 rounded-md border-2 border-regal-blue  ">
+          <Link className="text-center w-3" to="/email">
+            {" "}
+           <img width="5%" src="https://images.bewakoof.com/web/carbon-email-1620039620.png" alt="" />  CONTINUE WITH EMAIL
+          </Link>
         </div>
         <div className="flex ml-28 mr-30">
-          <div className="   mr-2 h-10 w-15 pl-20 pr-20 rounded-md border-2 border-regal-blue ">google</div>
-          <div className="  h-10  w-15 pl-20 pr-20  rounded-md before:rounded-md border-2 border-regal-blue ">facebook</div>
+          <div className=" flex   mr-2 h-10 w-15 pl-20 pr-20 rounded-md border-2 border-regal-blue ">
+          <span> <img width="40%"  src="https://images.bewakoof.com/web/group-3-2x-1558356035.png" alt="" /></span><span>google</span>
+          </div>
+          <div className=" flex  h-10  w-15 pl-20 pr-20  rounded-md before:rounded-md border-2 border-regal-blue ">
+            <span> <img width="40%"  src="https://images.bewakoof.com/web/bi-facebook2x-1620886445.png" alt="" /></span><span>facebook</span> 
+          </div>
         </div>
         <p class="termsAndConditions text-center">
           By creating an account or logging in, you agree with Bewakoof's
           <a
             href="https://www.bewakoof.com/terms-and-conditions"
-            target="_blank">
+            target="_blank"
+          >
             Terms and Conditions{" "}
           </a>
           and
-          <a href="https://www.bewakoof.com/privacy-policy-and-disclaimer" target="_blank">Privacy Policy</a>
+          <a
+            href="https://www.bewakoof.com/privacy-policy-and-disclaimer"
+            target="_blank"
+          >
+            Privacy Policy
+          </a>
           .
         </p>
       </div>

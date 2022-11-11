@@ -234,7 +234,7 @@ const BottomNav=()=> {
 
           </div>
           
-
+<Link to="/login" >login</Link>
       </>
   )
 }

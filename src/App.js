@@ -1,12 +1,18 @@
-
 // import Router from 'json-server/lib/server/router';
 
-import './App.css';
+import "./App.css";
 
+import React from "react";
+
+import MainRoutes from "./Pages/MainRoutes";
+
+const App = () => {
+  return (
+    <div>
+     <MainRoutes />
     
-     {/* <Otp />        */}
-<LoginSigup/>      
-<Login />
-<Signup/>
+    </div>
+  );
+};
 
-
+export default App;
