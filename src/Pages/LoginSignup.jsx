@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import Navbar from "../Components/Navbar";
 
 const LoginSignup = () => {
   const navigate = useNavigate();
@@ -54,7 +55,11 @@ const LoginSignup = () => {
   // console.log();
   // alert(`OTP -${otp1}`)
   return (
+    <div>
+      <Navbar/>
+   
     <div className="flex montserrat-bold,sans-serif m-auto">
+
       <div className="w-200 m-10">
         {" "}
         <h1 className="font-bold text-3xl">
@@ -141,6 +146,7 @@ const LoginSignup = () => {
           .
         </p>
       </div>
+    </div>
     </div>
   );
 };

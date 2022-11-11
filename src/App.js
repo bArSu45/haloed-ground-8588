@@ -1,18 +1,17 @@
+
 // import Router from 'json-server/lib/server/router';
-
-import "./App.css";
-
-
-
-import MainRoutes from "./Pages/MainRoutes";
+import React from 'react'
+import MainRoutes from './Pages/MainRoutes'
 
 const App = () => {
   return (
     <div>
-     <MainRoutes />
-    
+     <MainRoutes /> 
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
+
+
+
