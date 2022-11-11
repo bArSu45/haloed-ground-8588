@@ -3,10 +3,5 @@
 
 import './App.css';
 
-    
-     {/* <Otp />        */}
-<LoginSigup/>      
-<Login />
-<Signup/>
 
 
