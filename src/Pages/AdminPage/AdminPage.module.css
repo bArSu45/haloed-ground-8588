@@ -1,0 +1,31 @@
+
+
+.add_product_wrapper{
+    /* border: 2px solid red; */
+    text-align: left;
+    font-size: 35px;
+    margin: auto;
+    width: fit-content;
+}
+
+.form_element_div{
+    /* border: 2px solid red; */
+    gap: 30px;
+    display: flex;
+    padding: 5px 0;
+}
+
+.form_label{
+    /* border: 2px solid green; */
+    width: 300px;
+    font-weight: 600;
+    
+}
+#admin_main_div{
+    border-radius: 20px;
+    background-color: #B7C4CF;
+    width: 50%;
+    margin: auto;
+    padding: 30px;
+    margin-top: 100px;
+}
