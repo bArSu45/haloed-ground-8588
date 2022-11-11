@@ -34,6 +34,7 @@ const Otp = () => {
       }
     }
   return (
+    <Box>
     <Stack align="center" spacing={12}>
         <Heading>
         Verify with OTP
@@ -53,6 +54,7 @@ const Otp = () => {
 <Box><Button onClick={onClick}>PROCEED</Button></Box>
 
     </Stack>
+    </Box>
   )
 }
 

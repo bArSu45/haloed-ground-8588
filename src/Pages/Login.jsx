@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../Redux/AuthReducer/action";
 import { useDispatch } from "react-redux";
 import {
+  Box,
   Button,
   Flex,
   FormControl,
@@ -17,7 +18,9 @@ import Navbar from "../Components/Navbar";
 export default function Login() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
-  const [userId, setUserID] = useState("");
+  const [name, setName] = useState("");
+  const [userId, setUserId] = useState("");
+  const [userpassword, setUserpassword] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
@@ -44,14 +47,30 @@ export default function Login() {
       }
     });
   };
-  //   "eve.holt@reqres.in",
-  //   "password": "cityslicka"
-
-  return (
-    <>
+//  user/login
+  const handleSubmitU = (e) => {
+    //Default
+    e.preventDefault();
    
-    <Flex m="auto" w="100%">
-    <Stack w="50%" align="center" spacing="200px" bg={"#fff8de"}>
+    
+      if (userData === null) {
+        alert("please create an account");
+        // window.location.href = "index.html"
+      } else if (userId === "@clickNbuy" && userpassword === "#clickNbuy") {
+        alert("successfull");
+        navigate("/")
+        localStorage.setItem("username", JSON.stringify(name));
+        // window.location.href = "index.html"
+      } else {
+        alert("user dose not exist");
+      }
+    }
+  
+  return (
+    <Box bg={"#fff8de"}>
+   <Navbar/>
+    <Flex m="auto" w="100%" >
+    <Stack w="50%" align="center" p="5%" m="5%" spacing="120px" bg={"white"}>
       <Heading> Log in to your User Account</Heading>
       <form onSubmit={handleSubmit}>
         <Input
@@ -59,10 +78,11 @@ export default function Login() {
           type="text "
           placeholder="Email"
           value={email}
-          onChange={(e) => setUserID(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <br />
         <Input
+        spacing={5}
           variant="flushed"
           type="text "
           placeholder="password"
@@ -70,44 +90,52 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <Heading spacing="200px" align="center" fontSize={20} color={"teal"}>
-          forget password
+        <Heading m={5} align="center" fontSize={20} color={"teal"}>
+          forgot password
         </Heading>
 
-        <Button w={80} type="submit">
+        <Button w={80} m={5} type="submit">
           LOGIN
         </Button>
       </form>
     </Stack>
-    <Stack w="50%" paddingBottom="300px" align="center" spacing="200px" bg={"#fff8de"}>
+    <Stack w="50%" paddingBottom="300px" p="5%" m="5%" align="center" spacing="120px" bg={"white"}>
       <Heading> Log in to your Admin Account</Heading>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmitU}>
+      <Input
+          variant="flushed"
+          type="text "
+          placeholder="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <br />
         <Input
           variant="flushed"
           type="text "
           placeholder="userId"
           value={userId}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setUserId(e.target.value)}
         />
         <br />
         <Input
           variant="flushed"
           type="text "
           placeholder="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={userpassword}
+          onChange={(e) => setUserpassword(e.target.value)}
         />
 
-        <Heading spacing="200px" align="center" fontSize={20} color={"teal"}>
-          forget password
+        <Heading m={5} align="center" fontSize={20} color={"teal"}>
+          forgot password
         </Heading>
 
-        <Button w={80} type="submit">
+        <Button m={5}  w={80} type="submit">
           LOGIN
         </Button>
       </form>
     </Stack>
     </Flex>
-    </>
+    </Box>
   );
 }
