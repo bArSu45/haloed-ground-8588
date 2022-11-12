@@ -212,7 +212,7 @@ const Footer = () => {
 
 
                 </div>
-                <div style={{marginTop:"20px"}}>
+                <div className={f.para_div}>
                 <h1 className={f.h1}>CLICK N BUY THE NEW AGE ONLINE SHOPPING EXPERIENCE.</h1>
                 <p className={f.para} >Founded in 2012, Bewakoof is a lifestyle fashion brand that makes creative, distinctive fashion for the trendy, contemporary Indian. Bewakoof was created on the principle of creating impact through innovation, honesty and thoughtfulness.
 
