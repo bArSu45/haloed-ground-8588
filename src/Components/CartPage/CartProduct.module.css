@@ -21,6 +21,7 @@ font-family: 'Montserrat', sans-serif;
 .offers_right>p{
 font-size: medium;
 color: rgb(34, 33, 33);
+
 }
 .offers_left{
 margin-top: 15px;
@@ -37,6 +38,7 @@ font-family: 'Montserrat', sans-serif;
 }
 .description_right>p{
 font-size: medium;
+
 }
 .text_strike{
     padding-left: 5px;
@@ -45,4 +47,25 @@ font-size: medium;
 .description_right>span{
     font-size: medium;
     color: green;
+    }
+.select_box{
+display: flex;
+justify-content: flex-start;
+gap: 10px;
+padding-top: 10px;
+    }   
+
+    .bottom_btn{
+        display: flex;
+        justify-content: space-between;
+      padding: 0px 80px;
+    }
+    .bottom_btn>div>button{
+        margin: 10px;
+        font-family: 'Montserrat', sans-serif;
+
+   
+    }
+    .vertical_line{
+        border-left: 1px solid rgb(189, 187, 187);
     }

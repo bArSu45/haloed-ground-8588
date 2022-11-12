@@ -1,7 +1,19 @@
+import CartPage from "./Pages/CartPage/CartPage";
+import Payment from "./Pages/payment/Payment";
 
-// import Router from 'json-server/lib/server/router';
 
-import './App.css';
+import React from 'react'
+import MainRoutes from './Pages/MainRoutes'
+
+const App = () => {
+  return (
+    <div>
+     <MainRoutes /> 
+    </div>
+  )
+}
+
+export default App
 
 
 

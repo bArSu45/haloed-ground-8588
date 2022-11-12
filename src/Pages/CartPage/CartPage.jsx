@@ -2,6 +2,7 @@ import React from 'react'
 import CartProduct from '../../Components/CartPage/CartProduct'
 import styles from './CartPage.module.css'
 
+
 const CartPage = () => {
     const data =  [
         {
@@ -45,6 +46,7 @@ const CartPage = () => {
     )
     )}
     </div>
+   
 </div>
 <div className={styles.cart_summary}>
 <div className={styles.summary_text}>
