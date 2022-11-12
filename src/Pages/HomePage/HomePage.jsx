@@ -1,5 +1,6 @@
 import { Box, H1 } from '@chakra-ui/react'
 import React from 'react';
+import Footer from '../../Components/Footer';
 import Navbar from '../../Components/Navbar';
 import styles from "./HomePage.module.css"
 
@@ -217,6 +218,7 @@ export default function HomePage() {
             <Box id={styles.exclusive_div}>
                 <img src="https://images.bewakoof.com/uploads/grid/app/VoteForDesign-ThinStrip-Desktop-Revised-1667372740.gif" alt="" />
             </Box>
+            <Footer/>
         </div>
     )
 }
