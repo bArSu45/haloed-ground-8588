@@ -4,6 +4,7 @@ import "../index.css";
 import { Link, NavLink } from "react-router-dom";
 import { CiMobile2, CiSearch } from "react-icons/ci";
 import { BsHeart, BsBag } from "react-icons/bs";
+// import "../App.css"
 
 import logo from "../Assests/logo1.png";
 
@@ -206,7 +207,7 @@ const BottomNav = () => {
           <div className={b.first_div}>
             <Link to="/">
               <img
-                style={{ width: "40%", marginTop: "53px" }}
+                style={{ width: "20%" ,marginTop: "53px" }}
                 src="https://play-lh.googleusercontent.com/zZ6CalfB1nkHveMXD6iD6he6GJW6IemWjlNDPw1mQoxnx1Yo_qLNcJbhxbT34nYFvkgX"
                 alt=""
               />

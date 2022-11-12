@@ -1,12 +1,16 @@
 import { Box, H1 } from '@chakra-ui/react'
 import React from 'react';
 import Footer from '../../Components/Footer';
+import { Navbar1 } from '../../Components/Nav';
 import Navbar from '../../Components/Navbar';
 import styles from "./HomePage.module.css"
 
 export default function HomePage() {
     return (
+        <>
+        
         <div id={styles.Home_main_div}>
+        <Navbar1/>
             <Navbar/>
             <Box id={styles.official_merch_store}>
                 <Box>
@@ -220,5 +224,6 @@ export default function HomePage() {
             </Box>
             <Footer/>
         </div>
+        </>
     )
 }

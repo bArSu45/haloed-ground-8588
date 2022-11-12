@@ -2,19 +2,19 @@
 
 .container{
     height: 80px;
-    /* width: 1349px; */
+    width: 100%;
     background-color: #FFFFFF;
 }
 .sub_container{
-    width: 1080px;
+    width: 90%;
     display: flex;
     margin: auto;
-    height: 99%;
+    /* height: 99%; */
     justify-content: space-between;
 }
 .first_div{
-    height: 200px;
-    width: 200px;
+    /* height: 200px; */
+    width: auto;
     margin-top: -50px;
     /* display: flex; */
     /* justify-content: center;
@@ -22,18 +22,19 @@
 }
 .second_div{
     height: 100%;
-    width: 922px;
+    width: 95%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .small_box{
-    width: 372px;
-    height: 100%;
+    width: 40%;
+    /* height: 100%; */
     display: flex;
     gap: 20px;
     align-items: center;
+    /* margin-right: 100px; */
 }
 
 .dropdown{
@@ -211,8 +212,8 @@ color: #494949;
 }
    
 .topmiddle_container{
-  height: 25px;
-  width: 1170px;
+  /* height: 25px; */
+  width: 90%;
   padding: 8px 0px 6px;
   display: flex;
   margin: auto;
@@ -225,14 +226,14 @@ color: #494949;
 .left_container{
 
   height: 11px;
-  width: 150px;
+  width: 15%;
   color: #000000cc;
   display: flex;
   gap: 20px;
 }
 .right_container{
 height: 11px;
-width: 330px;
+width: 30%;
 color: #000000cc;
 display: flex;
 gap: 20px;
@@ -252,8 +253,8 @@ gap: 20px;
 .input1{
   display: flex;
   border-radius: 5px;
-  height: 40px;
-  width: 286px;
+  /* height: 40px; */
+  width: 65%;
   background-color:#EEEEEE ;
   justify-content: center;
   align-items: center;
@@ -265,7 +266,7 @@ gap: 20px;
   padding: 0px 9px;
   font-size: 10px;
   height: 40px;
-  width: 267px;
+  width: 90%;
   border: 0px;
   border-radius: 5px;
 
@@ -275,7 +276,7 @@ gap: 20px;
   outline: none;
 }
 .login{
-  height: 52px;
+  /* height: 52px; */
   width: 184px;
   display: flex;
   justify-content: space-between;
@@ -305,7 +306,24 @@ gap: 20px;
 /* .bottom_nav_container_items{
 
 } */
+@media screen and (max-width: 999px){
 
+  .container{
+     display: none;
+  }
+  .topcontainer{
+    display: none;
+  }
+}
+@media screen and (max-width: 600px){
+
+  .container{
+     display: none;
+  }
+  .topcontainer{
+    display: none;
+  }
+}
 
 
     
