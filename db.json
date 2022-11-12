@@ -9,8 +9,8 @@
       "clr_shade_4": "Men's White The Ryuk Graphic Printed T-shirt",
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 349,
-      "actualPriceText": "₹999",
-      "discount_price_box": "₹319"
+      "actualPriceText": 999,
+      "discount_price_box": 319
     },
     {
       "id": 2,
@@ -21,8 +21,8 @@
       "clr_shade_4": "Men's Black The Ryuk Graphic Printed Oversized T-shirt",
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 599,
-      "actualPriceText": "₹1499",
-      "discount_price_box": "₹559"
+      "actualPriceText": 1499,
+      "discount_price_box": 559
     },
     {
       "id": 3,
@@ -2466,32 +2466,8 @@
       "clr_shade_4": "Men's White The Ryuk Graphic Printed T-shirt",
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 349,
-      "actualPriceText": "₹999",
-      "discount_price_box": "₹319"
-    },
-    {
-      "id": 2,
-      "col-sm-4-href": "https://www.bewakoof.com/p/the-ryuk-oversized-full-sleeve-t-shirt",
-      "productImgTagSrc": "https://images.bewakoof.com/t640/the-ryuk-oversized-full-sleeve-t-shirt-554016-1667974663-1.jpg",
-      "plp": "OVERSIZED FIT",
-      "brand_namez": "Burberry",
-      "clr_shade_4": "Men's Black The Ryuk Graphic Printed Oversized T-shirt",
-      "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
-      "discountedPriceText": 599,
-      "actualPriceText": "₹1499",
-      "discount_price_box": "₹559"
-    },
-    {
-      "id": 3,
-      "col-sm-4-href": "https://www.bewakoof.com/p/mens-black-what-the-duck-graphic-printed-oversized-t-shirt",
-      "productImgTagSrc": "https://images.bewakoof.com/t640/men-s-black-what-the-duck-graphic-printed-oversized-t-shirt-553306-1667891652-1.jpg",
-      "plp": "OVERSIZED FIT",
-      "brand_namez": "Burberry",
-      "clr_shade_4": "Men's Black What The Duck Graphic Printed Oversized T-shirt",
-      "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
-      "discountedPriceText": 599,
-      "actualPriceText": "₹1499",
-      "discount_price_box": "₹559"
+      "actualPriceText": 999,
+      "discount_price_box": 319
     }
   ]
 }
