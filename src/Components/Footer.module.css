@@ -109,8 +109,9 @@ font-weight: bold;
 }
 @media screen and (max-width: 600px){
     .list_container{
+        display: grid;
         grid-template-columns: repeat(1,1fr);
-        align-items: center;
+        
     }
     .app{
         grid-template-columns: repeat(1,1fr); 
@@ -141,8 +142,11 @@ font-weight: bold;
 
 }
 @media screen and (max-width: 999px){
+    
     .list_container{
         grid-template-columns: repeat(1,1fr);
+        /* text-align: center; */
+        
     }
     .app{
         grid-template-columns: repeat(1,1fr); 
@@ -158,6 +162,7 @@ font-weight: bold;
     .h1{
         width: 50%;
         height: auto;
+        
 
         
     }

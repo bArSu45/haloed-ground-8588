@@ -4,7 +4,7 @@ import "../index.css";
 import { Link, NavLink } from "react-router-dom";
 import { CiMobile2, CiSearch } from "react-icons/ci";
 import { BsHeart, BsBag } from "react-icons/bs";
-// import "../App.css"
+import "../App.css"
 
 import logo from "../Assests/logo1.png";
 
