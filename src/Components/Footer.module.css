@@ -2,14 +2,13 @@
 
 .container{
     width: 100%;
-    height: auto
-    ;
+    height: auto;
     background-color: black;
     padding: 75px 0px 75px 0px
 }
 .main_container{
-    height:auto ;
-    width:1170px ;
+    height:auto;
+    width:1170px;
     margin: auto;
     padding: 15px;
 }

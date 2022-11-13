@@ -75,6 +75,7 @@ const LoginSignup = () => {
       <Box className="flex montserrat-bold,sans-serif ">
         <Box w={"50%"}>
           {" "}
+
           <h1 className="font-bold text-3xl">
             Welcome to the world of Bewakoof!
           </h1>
@@ -96,7 +97,7 @@ const LoginSignup = () => {
             <p className="text-1xl text-center ... text-regal-blue">
               for Latest trends, exciting offers and everything Bewakoof!
             </p>{" "}
-          
+  
 
           <Box alignItems="center" >
             {" "}
@@ -122,13 +123,9 @@ const LoginSignup = () => {
                   placeholder="ENTER MOBILE NUMBER"
                   class=" mr-8  border-transparent
                placeholder-font-bold
-              focus:outline-none focus:border-none focus:ring-color-#ffffff0d focus:ring-#ffffff0d
-             
-              
-             
-            
-              
-             "
+   <button type="submit" className="m-auto mt-4">
+
+              focus:outline-none focus:border-none focus:ring-color-#ffffff0d focus:ring-#ffffff0d "
                 />{" "}
               </Box>
               <Button
@@ -146,11 +143,13 @@ const LoginSignup = () => {
 
           <Text fontSize={{ base: "4px", md: "8px", lg: "16px" }} className="m-auto mt-4" >OR</Text>
 
+
           <Box
          width={{ lg: '50%', sm: '50%', md: '50%' }}
             
             textAlign="center"
             className="m-auto mt-4 h-14 rounded-md border-2 border-regal-blue  "
+
           >
             <Link style={{display:"flex",justifyContent:"space-evenly",marginTop:"16px"}} to="/email">
               {" "}
