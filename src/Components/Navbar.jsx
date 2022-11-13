@@ -6,6 +6,7 @@ import { CiMobile2, CiSearch } from "react-icons/ci";
 import { BsHeart, BsBag } from "react-icons/bs";
 
 import logo from "../Assests/logo1.png";
+import axios from "axios";
 
 const Navbar = () => {
   const [stickyClass, setStickyClass] = useState("");
@@ -177,6 +178,19 @@ const brand2data = [
 const brand3data = [" OnePlus 9R", "OnePlus 9RT", "OnePlus 9"];
 
 const BottomNav = () => {
+  const [data,setData] = useState([])
+    const getCartData = () =>{
+      axios.get("http://localhost:8080/cartdata")
+      .then((res)=>{
+        setData(res.data)
+        // console.log(res.data)
+      })
+      .catch((err)=>{
+        console.log(err)
+        setData(data)
+      })
+    }
+    getCartData()
   return (
     <>
       <div>
@@ -329,7 +343,7 @@ const BottomNav = () => {
                     <BsHeart />
                   </span>
                  <Link to="/cart"> <span className={b.icon}>
-                    <BsBag />
+                    <span><BsBag /></span><span style={{fontSize:"12px",borderRadius:"10px",padding:"3px 2px",marginLeft:"-15px",height:"5px"}}>{data.length}</span>
                   </span></Link>
                   <span>
                     <img

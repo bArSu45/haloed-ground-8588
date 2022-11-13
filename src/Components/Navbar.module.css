@@ -283,7 +283,9 @@ gap: 20px;
 }
 .icon{
   font-size: 20px;
+  display: flex;
 }
+
 .line{
   color: #474545;
   margin-top: 6px;
