@@ -135,6 +135,7 @@ padding: 10px;
     font-weight: 400;
 }
 
+
 /* media query */
 @media (max-width:1150px){
     .total>button{

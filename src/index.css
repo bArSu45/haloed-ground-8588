@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* {
+    font-family: montserrat, sans-serif;
+}
+
 .site-header {
     width: 100%;
     max-width: 100%;
@@ -11,37 +15,65 @@
     background-color: white;
     border: 1px white;
     transition: all 0.12s ease;
-  }
-  
-  .scrolled {
+}
+
+.scrolled {
     position: sticky;
     top: 0;
     left: 0;
     background-color: red;
-  }
-  .site-header__wrapper {
+}
+
+.site-header__wrapper {
     padding-top: 4rem;
     padding-bottom: 6rem;
-  }
-  @media (min-width: 600px) {
+}
+
+@media (min-width: 600px) {
     .site-header__wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 0;
-      padding-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0;
+        padding-bottom: 15px;
     }
-  }
-  @media (min-width: 600px) {
+}
+
+@media (min-width: 600px) {
     .nav__wrapper {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      padding-top: 10px;
-      padding-bottom: 0;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 0;
     }
-  }
-  /* .active{
+}
+
+@media (min-width: 600px) {
+    #signup {
+        display: flex;
+        /* flex-direction: column; */
+    }
+}
+
+.Box {
+    width: 100%;
+}
+
+@media screen and (min-width: 30em) {
+    .Box {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 48em) {
+    .Box {
+        width: 25%;
+    }
+}
+
+
+/* .active{
     
     text-decoration: underline;
     position: fixed;

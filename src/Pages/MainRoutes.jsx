@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router'
 import AdminPage from './AdminPage/AdminPage'
+import Alert from './Alert'
 import CartPage from './CartPage/CartPage'
 import HomePage from './HomePage/HomePage'
 import Login from './Login'
@@ -11,6 +12,7 @@ import MensPage from './ProductPage/MensPage'
 import Womens from './ProductPage/Womens'
 import WomensPage from './ProductPage/WomensPage'
 import Signup from './Signup'
+import Sorting from './Sorting'
 
 const MainRoutes = () => {
   return (
@@ -26,6 +28,8 @@ const MainRoutes = () => {
             <Route path="/mens" element={<MensPage />} />
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/alert" element={<Alert />} />
+             <Route path="/sorting" element={<Sorting />} />
 
         </Routes>
   )
