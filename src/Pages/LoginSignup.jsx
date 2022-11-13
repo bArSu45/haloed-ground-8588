@@ -74,7 +74,7 @@ const LoginSignup = () => {
       <div className="m-10 h-86 grid grid-cols-1 gap-10 content-center ...">
         <div className="m-auto">
           {" "}
-          <h1 class="text-2xl font-bold text-center">Log in / sign up</h1>{" "}
+          <h1 class="text-2xl font-bold text-center">Log in</h1>{" "}
         </div>
         <div>
           {" "}
@@ -95,13 +95,7 @@ const LoginSignup = () => {
                 placeholder="ENTER MOBILE NUMBER"
                 class=" mr-8  border-transparent
                placeholder-font-bold
-              focus:outline-none focus:border-none focus:ring-color-#ffffff0d focus:ring-#ffffff0d
-             
-              
-             
-            
-              
-             "
+              focus:outline-none focus:border-none focus:ring-color-#ffffff0d focus:ring-#ffffff0d"
               />{" "}
             </div>
             <div className="ml-28 mr-28  w-13 bg-#42a2a2 h-14 text-white text-center rounded-md font-bold">
@@ -132,8 +126,7 @@ const LoginSignup = () => {
           By creating an account or logging in, you agree with Bewakoof's
           <a
             href="https://www.bewakoof.com/terms-and-conditions"
-            target="_blank"
-          >
+            target="_blank">
             Terms and Conditions{" "}
           </a>
           and
