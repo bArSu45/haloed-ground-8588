@@ -1,6 +1,8 @@
+import { Alert, AlertDescription, AlertIcon, AlertTitle } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from './AdminPage.module.css';
 const AdminPage = () => {
     var name = JSON.parse(localStorage.getItem("username"))
@@ -44,10 +46,12 @@ const AdminPage = () => {
 
     return (
 
-        <div style={{ backgroundColor: '#F9F5EB', height: '100vh' }}>
-            <div style={{ display: 'flex', height: '100px', width: '100%', backgroundColor: 'white', margin: 'auto' }}>
-                <img style={{ width: '100px', height: '100px', marginLeft: '5%' }} src="https://play-lh.googleusercontent.com/zZ6CalfB1nkHveMXD6iD6he6GJW6IemWjlNDPw1mQoxnx1Yo_qLNcJbhxbT34nYFvkgX" alt="" />
-                <h3 style={{ fontSize: '55px', fontWeight: '800', color: '#FF9F29', textAlign: 'center', marginLeft: '20%' }}>Welcome {name} to Admin Panel</h3>
+        <div id={styles.admin_header_main_div}>
+            <div id={styles.admin_header}>
+                <Link to='/'>
+                <img id={styles.admin_logo} src="https://play-lh.googleusercontent.com/zZ6CalfB1nkHveMXD6iD6he6GJW6IemWjlNDPw1mQoxnx1Yo_qLNcJbhxbT34nYFvkgX" alt="" />
+                </Link>
+                <h3 id={styles.admin_heading}>Welcome <span style={{color:'green', fontStyle:'italic'}}>{name}</span> to Admin Panel</h3>
             </div>
             <div id={styles.admin_main_div}>
                 <div
@@ -81,7 +85,7 @@ const AdminPage = () => {
                         <input type="number" value={product.price} name={product.price} onChange={(e) => setProduct({ ...product, price: e.target.value })} className={styles.form_input} />
                     </div>
                     <div style={{ textAlign: "center" }}>
-                        <button onClick={handleSubmit} style={{ backgroundColor: '#354259', padding: '2px 10px 2px 10px', borderRadius: '5px', marginTop: '20px', color: '#F9F5EB' }}>Add Product</button>
+                        <button onClick={handleSubmit} id={styles.admin_btn}>Add Product</button>                       
                     </div>
                 </div>
             </div>

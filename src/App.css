@@ -75,7 +75,7 @@
 .navbar {
   position: sticky;
   z-index: 999;
-  height: 62px;
+  /* height: 62px; */
   width: 100%;
   /* background-color: #ccc; */
 }

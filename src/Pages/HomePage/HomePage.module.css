@@ -6,6 +6,7 @@
 #Home_main_div {
     width: 100%;
     height: auto;
+    
 }
 
 #official_merch_store {
@@ -13,6 +14,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-bottom: 30px;
+    /* margin-top: 50px; */
 }
 
 #own_your_crazy_div {
@@ -146,21 +148,18 @@
 
 /* for medium screen .........................................................................................*/
 
-@media screen and (max-width:1000px) and (min-width:481px) {
+@media screen and (max-width:1300px) and (min-width:481px) {
     #ni9_img_div {
         grid-template-columns: repeat(4, 1fr);
     }
     #popular_categories_div {
         grid-template-columns: repeat(4, 1fr);
     }
-    .popular_categories_img {
-        border: 2px solid black;
-    }
     .popular_categories_img>img {
         margin: auto;
     }
     #discount_pe_discount_div {
-        border: 5px solid blueviolet;
+
         width: 100%;
     }
     .discount_img_div {
@@ -178,14 +177,11 @@
     #popular_categories_div {
         grid-template-columns: repeat(3, 1fr);
     }
-    .popular_categories_img {
-        border: 2px solid black;
-    }
+ 
     .popular_categories_img>img {
         margin: auto;
     }
     #discount_pe_discount_div {
-        border: 5px solid blueviolet;
         width: 100%;
     }
     .discount_img_div {

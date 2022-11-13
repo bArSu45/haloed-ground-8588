@@ -72,8 +72,8 @@ const LoginSignup = () => {
     <Box textAlign={"center"}>
       <Navbar />
 
-      <Box className="flex montserrat-bold,sans-serif ">
-        <Box w={"50%"}>
+      <Box className="flex montserrat-bold,sans-serif" mt='50px'>
+        <Box w="50%">
           {" "}
           <h1 className="font-bold text-3xl">
             Welcome to the world of Bewakoof!
@@ -88,7 +88,7 @@ const LoginSignup = () => {
           <Box >
             {" "}
             <h1 class="text-2xl font-bold text-center">
-              Log in / sign up
+              Log in / Sign up
             </h1>{" "}
           </Box>
          
@@ -146,23 +146,19 @@ const LoginSignup = () => {
 
           <Text fontSize={{ base: "4px", md: "8px", lg: "16px" }} className="m-auto mt-4" >OR</Text>
 
-          <Box
-         width={{ lg: '50%', sm: '50%', md: '50%' }}
-            
-            textAlign="center"
-            className="m-auto mt-4 h-14 rounded-md border-2 border-regal-blue  "
-          >
-            <Link style={{display:"flex",justifyContent:"space-evenly",marginTop:"16px"}} to="/email">
-              {" "}
-              <Image
-                width="6%"
-               
-                src="https://images.bewakoof.com/web/carbon-email-1620039620.png"
-                alt=""
-              />
-              <Text fontSize={{ base: "10px", md: "12px", lg: "14px" }}> CONTINUE WITH EMAIL</Text>
-            </Link>
-          </Box>
+          <Link to='/email'>
+          <Button
+               width={{ lg: '50%', sm: '50%', md: '50%' }}
+                textAlign={"center"}
+                color="white"
+                bg={"#42a2a2"}
+                type="submit"
+                className="m-auto mt-4"
+              >
+                Log In
+              </Button>
+          </Link>
+        
           <Box width={{ lg: '50%', sm: '50%', md: '50%' }} style={{display:"flex",justifyContent:"space-between"}} className="  m-auto mt-4  h-12  ">
             <Box w="40%" p="2%" className=" flex  rounded-md border-2  border-regal-blue ">
               <Image
@@ -196,6 +192,7 @@ const LoginSignup = () => {
               href="https://www.bewakoof.com/terms-and-conditions"
               target="_blank"
               color={"teal"}
+              rel='noreferrer'
             >
               Terms and Conditions{" "}
             </a>
