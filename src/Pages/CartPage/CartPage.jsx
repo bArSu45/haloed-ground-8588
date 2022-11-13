@@ -24,6 +24,8 @@ const CartPage = () => {
     // ]
     const [data,setData] = useState([])
     const [qty,setQty] = useState(1)
+    const [user,setUser] = useState([])
+    var email = JSON.parse(localStorage.getItem("email"))
     const getCartData = () =>{
       axios.get("http://localhost:8080/cartdata")
       .then((res)=>{
@@ -35,9 +37,11 @@ const CartPage = () => {
         setData(data)
       })
     }
+   
     useEffect(()=>{
       getCartData()
     },[])
+    console.log(user)
     // console.log(data)
     const subtotal = data.reduce((a, {discountedPriceText}) => a + (discountedPriceText * qty), 0);
     const totalMrp = data.reduce((a, {actualPriceText}) => a + (actualPriceText * qty), 0);
@@ -46,11 +50,17 @@ const CartPage = () => {
     <>
   <div className={styles.container}>
     <div>
-     <img src="https://images.bewakoof.com/web/ic-desktop-normal-bwkf-logo.svg" alt="" />
+    <Link to="/">
+              <img
+                style={{ width: "15%"  }}
+                src="https://play-lh.googleusercontent.com/zZ6CalfB1nkHveMXD6iD6he6GJW6IemWjlNDPw1mQoxnx1Yo_qLNcJbhxbT34nYFvkgX"
+                alt=""
+              />
+            </Link>
     </div>
     <div className={styles.user_info}>
         <h6>Signed as</h6>
-        <h4>ravindra111223@gmail.com</h4>
+        <h4>{email}</h4>
     </div>
   </div>
   <hr />

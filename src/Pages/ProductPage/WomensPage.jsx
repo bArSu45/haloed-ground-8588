@@ -2,8 +2,9 @@ import React from 'react'
 import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { Box, Select, Stack } from '@chakra-ui/react'
+import { Box, Button, Select, Stack } from '@chakra-ui/react'
 import styles from './MensPage.module.css'
+import Navbar from '../../Components/Navbar'
 
 export default function MensPage() {
   const [mensData, setMensData] = useState([])
@@ -16,12 +17,20 @@ export default function MensPage() {
         console.log(e)
       })
   }
-
+  const addCartData = (data) => {
+    axios.post("http://localhost:8080/cartdata", data)
+      .then((res) => {
+        console.log(res.data)
+      }).catch((e) => {
+        console.log(e)
+      })
+  }
   useEffect(() => {
     getMensData()
   }, [])
   console.log(mensData)
   return (
+    <><Navbar/>
     <div id={styles.product_sidebar_main_div}>
       <div id={styles.sidebar}>
         
@@ -85,9 +94,10 @@ export default function MensPage() {
             <h1 id={styles.product_brand}>{item.brand_namez}</h1>
             <h1 id={styles.product_name}>{item.clr_shade_4}</h1>
             <Box id={styles.price_div}>
-              <h1 id={styles.discount_price}>{item.discount_price_box}</h1>
-              <h1 id={styles.actual_price}>{item.actualPriceText}</h1>
+              <h1 id={styles.discount_price}>₹{item.discount_price_box}</h1>
+              <h1 id={styles.actual_price}>₹{item.actualPriceText}</h1>
               </Box>
+              <Button onClick={() => addCartData(item)} ml="70px">Add to Cart</Button>
             </Box>
           </div>
           
@@ -95,5 +105,6 @@ export default function MensPage() {
       })}
     </div>
     </div>
+    </>
   )
 }

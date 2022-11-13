@@ -25,6 +25,7 @@ const Payment = () => {
     // ]
     const [data,setData] = useState([])
     const [showAlert, setShowAlert] = useState(false)
+    var email = JSON.parse(localStorage.getItem("email"))
     const navigate = useNavigate()
     const getCartData = () =>{
       axios.get("http://localhost:8080/cartdata")
@@ -55,11 +56,17 @@ const Payment = () => {
     <>
  <div className={styles.container}>
     <div>
-     <img src="https://images.bewakoof.com/web/ic-desktop-normal-bwkf-logo.svg" alt="" />
+    <Link to="/">
+              <img
+                style={{ width: "15%"  }}
+                src="https://play-lh.googleusercontent.com/zZ6CalfB1nkHveMXD6iD6he6GJW6IemWjlNDPw1mQoxnx1Yo_qLNcJbhxbT34nYFvkgX"
+                alt=""
+              />
+            </Link>
     </div>
     <div className={styles.user_info}>
         <h6>Signed as</h6>
-        <h4>ravindra111223@gmail.com</h4>
+        <h4>{email}</h4>
     </div>
   </div>
   <hr />

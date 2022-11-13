@@ -1,0 +1,36 @@
+.container{
+    display: none;
+}
+.first_div{
+    display: flex;
+    gap: 20px;
+}
+
+@media (min-width: 300px) and (max-width: 999px){
+
+    .container{
+        /* height: 56px; */
+        width: 100%;
+        background-color:#FDD835 ;
+        font-size: 26px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 7px;
+        align-items: center;
+    }
+}
+
+/* @media screen and (max-width: 999px){
+
+    .container{
+        height: 56px;
+        width: 100%;
+        background-color:#FDD835 ;
+        font-size: 26px;
+        display: flex;
+        justify-content: space-between;
+        padding: 7px;
+        align-items: center;
+    }
+} */
