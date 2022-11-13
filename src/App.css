@@ -73,7 +73,7 @@
   font-family: 'Lexend Deca', sans-serif;
 }
 .navbar {
-  position: fixed;
+  position: sticky;
   z-index: 999;
   height: 62px;
   width: 100%;
@@ -81,7 +81,7 @@
 }
 
 .sticky-nav {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
 }

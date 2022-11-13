@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../Redux/AuthReducer/action";
 import { useDispatch } from "react-redux";
@@ -14,9 +14,11 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import Navbar from "../Components/Navbar";
+import axios from "axios";
 
 export default function Login() {
   const dispatch = useDispatch();
+  const [userData, setData] = useState([]);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [userId, setUserId] = useState("");
@@ -25,7 +27,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   //   const { auth, userLogin } = useContext(AppContext);
-  var userData = JSON.parse(localStorage.getItem("signup"));
+  // var userData = JSON.parse(localStorage.getItem("signup"));
   console.log(userData);
   const handleSubmit = (e) => {
     //Default
@@ -40,6 +42,7 @@ export default function Login() {
       } else if (email === user.email && password === user.password) {
         alert("successfull");
         localStorage.setItem("sts", JSON.stringify(true));
+        localStorage.setItem("email", JSON.stringify(user.email));
         navigate("/")
         localStorage.setItem("signin", JSON.stringify(userData));
         // window.location.href = "index.html"
@@ -54,10 +57,7 @@ export default function Login() {
     e.preventDefault();
    
     
-      if (userData === null) {
-        alert("please create an account");
-        // window.location.href = "index.html"
-      } else if (userId === "@clickNbuy@gmail.com" && userpassword === "#clickNbuy") {
+      if (userId === "@clickNbuy@gmail.com" && userpassword === "#clickNbuy") {
         alert("successfull");
         navigate("/admin")
         localStorage.setItem("username", JSON.stringify(name));
@@ -66,11 +66,20 @@ export default function Login() {
         alert("user dose not exist");
       }
     }
-  
+    useEffect(() => {
+      axios
+        .get("http://localhost:8080/userdata")
+        .then((res) => {
+          setData(res.data);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }, []);
   return (
     <extendTheme bg={"#fff8de"}>
    <Navbar/>
-    <Flex m="auto" w={{ lg: '100%', sm: '50%', md: '75%' }} display={{ lg: 'flex',md:"flex" }} >
+    <Flex m="auto"  w={{ lg: '100%', sm: '50%', md: '75%' }} display={{ lg: 'flex',md:"flex" }} >
     <Stack w="50%" align="center" p="5%" m="5%" spacing="120px" bg={"white"}>
       <Heading> Log in to your User Account</Heading>
       <form onSubmit={handleSubmit}>
@@ -102,7 +111,7 @@ export default function Login() {
     </Stack>
     <Stack w="50%" paddingBottom="300px" p="5%" m="5%" align="center" spacing="120px" bg={"white"}>
       <Heading> Log in to your Admin Account</Heading>
-      <extendTheme onSubmit={handleSubmitU}>
+      <form onSubmit={handleSubmitU}>
       <Input
           variant="flushed"
           type="text "
@@ -134,7 +143,7 @@ export default function Login() {
         <Button m={5}  w={80} type="submit">
           LOGIN
         </Button>
-      </extendTheme>
+      </form>
     </Stack>
     </Flex>
     </extendTheme>
