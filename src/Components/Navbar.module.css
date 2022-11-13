@@ -193,7 +193,7 @@ color: #494949;
 
 }
 .line{
-  border: 1px solid grey;
+  border: 2/3px solid grey;
 }
 
   
@@ -288,7 +288,8 @@ gap: 20px;
 
 .line{
   color: #474545;
-  margin-top: 5px;
+  margin-top: 6px;
+  /* border: 0.1px solid #474545; */
 }
 .bottom_nav{
   height: 59px;
