@@ -1,0 +1,173 @@
+
+
+.container{
+    width: 100%;
+    height: auto
+    ;
+    background-color: black;
+    padding: 75px 0px 75px 0px
+}
+.main_container{
+    height:auto ;
+    width:1170px ;
+    margin: auto;
+    padding: 15px;
+}
+.top_heading{
+    font-size: 22px;
+    color: #FDD835;
+    line-height: 52px;
+}
+.customer_service{
+    height: auto;
+    width: 100%;
+    display: grid;
+    justify-content: space-between;
+    
+        grid-template-columns: repeat(4,1fr); 
+    
+}
+.head{
+    color: #FDD835;
+    font-size: 14px;
+    margin: 0px 0px 20px;
+
+
+}
+.head2{
+    color:white;
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 0px 0px 20px;
+}
+
+.tail{
+    color: rgb(226, 228, 229);
+    font-size: 12px;
+}
+.box{
+    height: 37px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    
+}
+.app{
+    height: auto;
+    width: 100%;
+    margin-top: 20px;
+    /* display: flex; */
+    justify-content: left;
+    gap: 100px;
+    display: grid;
+grid-template-columns: repeat(3,1fr);
+}
+.play{
+    display: flex;
+    gap: 10px;
+}
+.line{
+    margin-top: 20px;
+    border: 3px solid gray;
+    width: 100%;
+    
+}
+.list_container{
+height: auto;
+width: 100%;
+margin-top: 20px;
+display: grid;
+grid-template-columns: repeat(4,1fr);
+}
+.last_column{
+    font-size: 20px;
+    color: rgb(99, 208, 228);
+margin-top: 15px;
+font-weight: bold;
+}
+.h1
+{
+    font-size: 19px;
+    color: white;
+    margin: 0px 0px 20px;
+    font-weight: bolder;
+    height: auto;
+    width: 100%;
+}
+.para{
+    font-size: 15px;
+    color: white;
+    margin: 0px 0px 20px;
+    font-weight: bold;
+    height: auto;
+    width:100%;
+}
+.para_div{
+    margin-top: 20px;
+    height: auto;
+    width: auto;
+}
+@media screen and (max-width: 600px){
+    .list_container{
+        grid-template-columns: repeat(1,1fr);
+        align-items: center;
+    }
+    .app{
+        grid-template-columns: repeat(1,1fr); 
+    }
+    .customer_service{
+        grid-template-columns: repeat(1,1fr);
+        margin-top: 20px;
+    }
+    .para{
+        width: 50%;
+        height: auto;
+        font-size: 10px;
+    }
+    .h1{
+        width: 50%;
+        height: auto;
+        font-size: 14px;
+    }
+    .line{
+       
+        display: none;
+    }
+    .para_div{
+      
+        height: auto;
+        width: auto;
+    }
+
+}
+@media screen and (max-width: 999px){
+    .list_container{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .app{
+        grid-template-columns: repeat(1,1fr); 
+    }
+    .customer_service{
+        grid-template-columns: repeat(1,1fr);
+        margin-top: 20px;
+    }
+    .para{
+        width: 50%;
+        height: auto;
+    }
+    .h1{
+        width: 50%;
+        height: auto;
+
+        
+    }
+    .line{
+        display: none;
+    }
+    .para_div{
+      
+        height: auto;
+        width: auto;
+    }
+}
+
