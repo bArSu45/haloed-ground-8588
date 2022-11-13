@@ -1346,12 +1346,6 @@
       "discountedPriceText": 1499,
       "actualPriceText": 289,
       "discount_price_box": 137
-    },
-    {
-      "name": "t-shirt",
-      "productImgTagSrc": "https://images.bewakoof.com/t640/the-ryuk-oversized-full-sleeve-t-shirt-554016-1667974663-1.jpg",
-      "price": "3400",
-      "id": 106
     }
   ],
   "womensdata": [
@@ -2472,19 +2466,63 @@
       "password": "su",
       "status": true,
       "id": 2
+    },
+    {
+      "name": "barsa",
+      "mobile": "",
+      "email": "b@gmail.com",
+      "password": "12345",
+      "status": true,
+      "id": 3
+    },
+    {
+      "name": "bb",
+      "mobile": "",
+      "email": "b@",
+      "password": "123",
+      "status": true,
+      "id": 4
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "status": true,
+      "id": 5
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "a@",
+      "password": "abc",
+      "status": true,
+      "id": 6
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "status": true,
+      "id": 7
+    },
+    {
+      "name": "Barsarani Ojha",
+      "mobile": "",
+      "email": "b@gmail.com",
+      "password": "abc",
+      "status": true,
+      "id": 8
+    },
+    {
+      "name": "",
+      "mobile": "12345",
+      "email": "",
+      "password": "",
+      "status": true,
+      "id": 9
     }
   ],
-  "cartdata": [
-    {
-      "id": 1,
-      "col_sm_4_href": "https://www.bewakoof.com/p/bold-red-boyfriend-t-shirt-for-women",
-      "productImgTagSrc": "https://images.bewakoof.com/t640/women-s-red-boyfriend-t-shirt-170465-1658918677-1.jpg",
-      "plp": "BOYFRIEND FIT",
-      "brand_namez": "Click n Buy",
-      "clr_shade_4": "Women's Red Boyfriend T-shirt",
-      "discountedPriceText": 358,
-      "actualPriceText": 999,
-      "discount_price_box": 329
-    }
-  ]
+  "cartdata": []
 }

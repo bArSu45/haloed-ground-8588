@@ -4,6 +4,7 @@
   height: 80px;
   width: 100%;
   background-color: #FFFFFF;
+  
 }
 .sub_container{
   width: 90%;
@@ -311,6 +312,7 @@ align-items: center;
 
 .container{
    display: none;
+   
 }
 .topcontainer{
   display: none;

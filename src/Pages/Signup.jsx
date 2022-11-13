@@ -53,7 +53,7 @@ const [ls, setLs] = useState(false);
   // const [password, setPassword] = useState("");
   const [userdata, setUserdata] = useState({
     name: "",
-    mobile: "",
+    mobile: mobilesign,
     email: "",
     password: "",
 status:true,
@@ -71,7 +71,7 @@ status:true,
         setLs(true)
         localStorage.setItem("sts", JSON.stringify(true));
        
-        navigate("/")
+        navigate("/email")
       })
       .catch((e) => {
         console.log(e);
@@ -116,7 +116,7 @@ status:true,
                 <Input
                   variant="flushed"
                   placeholder="Mobile"
-                  value={mobilesign}
+                  value={mobile}
                   name={userdata.mobile}
                   onChange={(e) =>
                     setUserdata({ ...userdata, mobile: e.target.value })

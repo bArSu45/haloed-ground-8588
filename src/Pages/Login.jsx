@@ -46,9 +46,7 @@ export default function Login() {
         navigate("/")
         localStorage.setItem("signin", JSON.stringify(userData));
         // window.location.href = "index.html"
-      } else {
-        alert("user dose not exist");
-      }
+      } 
     });
   };
 //  user/login
@@ -57,7 +55,7 @@ export default function Login() {
     e.preventDefault();
    
     
-      if (userId === "@clickNbuy@gmail.com" && userpassword === "#clickNbuy") {
+      if (userId === "click@gmail.com" && userpassword === "clicknbuy") {
         alert("successfull");
         navigate("/admin")
         localStorage.setItem("username", JSON.stringify(name));
@@ -77,9 +75,9 @@ export default function Login() {
         });
     }, []);
   return (
-    <extendTheme bg={"#fff8de"}>
+    <Box bg={"#fff8de"}>
    <Navbar/>
-    <Flex m="auto"  w={{ lg: '100%', sm: '50%', md: '75%' }} display={{ lg: 'flex',md:"flex" }} >
+    <Flex mt="auto"  w={{ lg: '100%', sm: '50%', md: '75%' }} display={{ lg: 'flex',md:"flex" }} >
     <Stack w="50%" align="center" p="5%" m="5%" spacing="120px" bg={"white"}>
       <Heading> Log in to your User Account</Heading>
       <form onSubmit={handleSubmit}>
@@ -146,6 +144,6 @@ export default function Login() {
       </form>
     </Stack>
     </Flex>
-    </extendTheme>
+    </Box>
   );
 }
