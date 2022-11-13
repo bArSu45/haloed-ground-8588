@@ -37,6 +37,8 @@ const AdminPage = () => {
             }).catch((e) => {
                 console.log(e)
             })
+
+            alert ("Product added Successfully")
     }
 
     // console.log("product",product)
@@ -85,7 +87,7 @@ const AdminPage = () => {
                         <input type="number" value={product.price} name={product.price} onChange={(e) => setProduct({ ...product, price: e.target.value })} className={styles.form_input} />
                     </div>
                     <div style={{ textAlign: "center" }}>
-                        <button onClick={handleSubmit} id={styles.admin_btn}>Add Product</button>                       
+                        <button onClick={handleSubmit} id={styles.admin_btn} alert>Add Product</button>                       
                     </div>
                 </div>
             </div>

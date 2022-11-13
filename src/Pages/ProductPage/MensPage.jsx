@@ -21,8 +21,8 @@ export default function MensPage() {
       })
   }
 
-  const getWholeMensData = (sortBy) => {
-    axios.get(`http://localhost:8080/mensdata?_sort=discount_price_box&_order=${sortBy}`)
+  const getWholeMensData = () => {
+    axios.get(`http://localhost:8080/mensdata`)
       .then((res) => {
         setMensData(res.data)
 
@@ -45,16 +45,14 @@ export default function MensPage() {
     if (filter !== "Brand") {
 
       getMensData(sortBy, filter)
-    } else {
-      getWholeMensData(sortBy)
-    }
+    } 
 
     // console.log(mensData)
   }, [sortBy, filter])
   useEffect(() => {
-    getWholeMensData(sortBy)
+    getWholeMensData()
 
-  }, [sortBy])
+  }, [])
   console.log("ff", mensData)
   const addCartData = (data) => {
     axios.post("http://localhost:8080/cartdata", data).then((r) => {
