@@ -4,10 +4,12 @@ import "../index.css";
 import { Link, NavLink } from "react-router-dom";
 import { CiMobile2, CiSearch } from "react-icons/ci";
 import { BsHeart, BsBag } from "react-icons/bs";
-
+import "./CartPage/nav.css";
 import logo from "../Assests/logo1.png";
+import { Avatar, AvatarGroup, Box, Heading } from "@chakra-ui/react";
 
 const Navbar = () => {
+//  console.log(sts)
   const [stickyClass, setStickyClass] = useState("");
 
   useEffect(() => {
@@ -177,6 +179,7 @@ const brand2data = [
 const brand3data = [" OnePlus 9R", "OnePlus 9RT", "OnePlus 9"];
 
 const BottomNav = () => {
+  var sts  = JSON.parse(localStorage.getItem("sts"));
   return (
     <>
       <div>
@@ -321,9 +324,29 @@ const BottomNav = () => {
                   <span style={{ fontSize: "20px", fontWeight: "lighter" }}>
                     I
                   </span>
-                  <Link>
+                  <Link to="/login">
                     {" "}
-                    <span>Login</span>
+                    <span>{sts?
+                    <Box fontSize="12px" className="drop">
+                    <Heading fontSize="12px">
+                      <Link to="/FEATURES"><AvatarGroup spacing='1rem'>
+                    <Avatar boxSize={8} bg='teal.500' />
+                   </AvatarGroup> </Link>
+                    </Heading>
+                    <Box className="dropmenu" bg="white"  p="30px">
+                      {" "}
+                      <Heading mt='30px'fontSize="12px">h</Heading>
+                      <Heading  mt='30px' fontSize="12px">ht</Heading>
+                      <Heading  mt='30px' fontSize="12px">ht</Heading>
+                      <Heading  mt='30px' fontSize="12px">hs</Heading>
+                      <Heading  mt='30px' fontSize="12px">hg</Heading>
+                      <Heading  onClick={()=>{
+                        localStorage.setItem("sts", JSON.stringify(false));
+                      }} mt='30px' fontSize="12px">Logout</Heading>{" "}
+                    </Box>{" "}
+                  </Box>
+                     
+                    :"Login"}</span>
                   </Link>
                   <span className={b.icon}>
                     <BsHeart />

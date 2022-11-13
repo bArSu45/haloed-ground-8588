@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import styles from './AdminPage.module.css';
 const AdminPage = () => {
-
+    var name = JSON.parse(localStorage.getItem("username"))
     const [mensData, setMensData] = useState([])
     const [product, setProduct] = useState({
         name: "",
@@ -47,7 +47,7 @@ const AdminPage = () => {
         <div style={{ backgroundColor: '#F9F5EB', height: '100vh' }}>
             <div style={{ display: 'flex', height: '100px', width: '100%', backgroundColor: 'white', margin: 'auto' }}>
                 <img style={{ width: '100px', height: '100px', marginLeft: '5%' }} src="https://play-lh.googleusercontent.com/zZ6CalfB1nkHveMXD6iD6he6GJW6IemWjlNDPw1mQoxnx1Yo_qLNcJbhxbT34nYFvkgX" alt="" />
-                <h3 style={{ fontSize: '55px', fontWeight: '800', color: '#FF9F29', textAlign: 'center', marginLeft: '20%' }}>Welcome to Admin Panel</h3>
+                <h3 style={{ fontSize: '55px', fontWeight: '800', color: '#FF9F29', textAlign: 'center', marginLeft: '20%' }}>Welcome {name} to Admin Panel</h3>
             </div>
             <div id={styles.admin_main_div}>
                 <div
