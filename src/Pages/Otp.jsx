@@ -1,6 +1,7 @@
 import { Box, Button, Heading, HStack, Input, PinInput, PinInputField, Stack, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
+import Navbar from '../Components/Navbar'
 
 const Otp = () => {
   var mobilesign = JSON.parse(localStorage.getItem("mobile"))
@@ -30,17 +31,19 @@ const Otp = () => {
     const onClick=()=>{
       console.log("hjj",otp)
       if(true){
+        localStorage.setItem("sts", JSON.stringify(true));
         navigate("/")
       }
     }
   return (
-    <Box>
+    <extendTheme>
+      <Navbar/>
     <Stack align="center" spacing={12}>
         <Heading>
         Verify with OTP
         </Heading>
         <Text>Sent to</Text>
-        <Box><Input  value={mobilesign} variant='flushed' placeholder='MOBILE' /></Box> 
+        <Box><Input textAlign="center" fontFamily="bold"  value={mobilesign} variant='flushed' placeholder='MOBILE' /></Box> 
         <Text>Enter OTP</Text>
         <HStack>
   <PinInput value={otp1}>
@@ -50,11 +53,11 @@ const Otp = () => {
     <PinInputField />
   </PinInput>
 </HStack>
-<Box>{min}:{second}</Box>
-<Box><Button onClick={onClick}>PROCEED</Button></Box>
+<Box fontFamily="bold">RESEND OTP in {min}:{second}s</Box>
+<Box><Button  onClick={onClick}>LOGIN</Button></Box>
 
     </Stack>
-    </Box>
+    </extendTheme>
   )
 }
 

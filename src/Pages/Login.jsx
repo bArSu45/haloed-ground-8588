@@ -39,6 +39,7 @@ export default function Login() {
         // window.location.href = "index.html"
       } else if (email === user.email && password === user.password) {
         alert("successfull");
+        localStorage.setItem("sts", JSON.stringify(true));
         navigate("/")
         localStorage.setItem("signin", JSON.stringify(userData));
         // window.location.href = "index.html"
@@ -56,7 +57,7 @@ export default function Login() {
       if (userData === null) {
         alert("please create an account");
         // window.location.href = "index.html"
-      } else if (userId === "@clickNbuy" && userpassword === "#clickNbuy") {
+      } else if (userId === "@clickNbuy@gmail.com" && userpassword === "#clickNbuy") {
         alert("successfull");
         navigate("/admin")
         localStorage.setItem("username", JSON.stringify(name));
@@ -67,9 +68,9 @@ export default function Login() {
     }
   
   return (
-    <Box bg={"#fff8de"}>
+    <extendTheme bg={"#fff8de"}>
    <Navbar/>
-    <Flex m="auto" w="100%" >
+    <Flex m="auto" w={{ lg: '100%', sm: '50%', md: '75%' }} display={{ lg: 'flex',md:"flex" }} >
     <Stack w="50%" align="center" p="5%" m="5%" spacing="120px" bg={"white"}>
       <Heading> Log in to your User Account</Heading>
       <form onSubmit={handleSubmit}>
@@ -101,7 +102,7 @@ export default function Login() {
     </Stack>
     <Stack w="50%" paddingBottom="300px" p="5%" m="5%" align="center" spacing="120px" bg={"white"}>
       <Heading> Log in to your Admin Account</Heading>
-      <form onSubmit={handleSubmitU}>
+      <extendTheme onSubmit={handleSubmitU}>
       <Input
           variant="flushed"
           type="text "
@@ -133,9 +134,9 @@ export default function Login() {
         <Button m={5}  w={80} type="submit">
           LOGIN
         </Button>
-      </form>
+      </extendTheme>
     </Stack>
     </Flex>
-    </Box>
+    </extendTheme>
   );
 }
