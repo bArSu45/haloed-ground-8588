@@ -1,25 +1,47 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import CartProduct from '../../Components/CartPage/CartProduct'
 import styles from './CartPage.module.css'
 
 
 const CartPage = () => {
-    const data =  [
-        {
-            "image": "https://images.bewakoof.com/t320/unisex-tie-dye-t-shirt-521176-1659110437-1.jpg",
-            "name": "Unisex Very Peri Tie & Dye T-shirt",
-            "price": 560,
-            "mrp": "₹1099",
-            "discount": "You saved ₹539!"
-          },
-          {
-            "image": "https://images.bewakoof.com/t320/unisex-tie-dye-t-shirt-521176-1659110437-1.jpg",
-            "name": "Unisex Very Peri Tie & Dye T-shirt",
-            "price": 560,
-            "mrp": "₹1099",
-            "discount": "You saved ₹539!"
-          }
-    ]
+    // const data =  [
+    //     {
+    //         "image": "https://images.bewakoof.com/t320/unisex-tie-dye-t-shirt-521176-1659110437-1.jpg",
+    //         "name": "Unisex Very Peri Tie & Dye T-shirt",
+    //         "price": 560,
+    //         "mrp": "₹1099",
+    //         "discount": "You saved ₹539!"
+    //       },
+    //       {
+    //         "image": "https://images.bewakoof.com/t320/unisex-tie-dye-t-shirt-521176-1659110437-1.jpg",
+    //         "name": "Unisex Very Peri Tie & Dye T-shirt",
+    //         "price": 560,
+    //         "mrp": "₹1099",
+    //         "discount": "You saved ₹539!"
+    //       }
+    // ]
+    const [data,setData] = useState([])
+    const [qty,setQty] = useState(1)
+    const getCartData = () =>{
+      axios.get("http://localhost:8080/cartdata")
+      .then((res)=>{
+        setData(res.data)
+        // console.log(res.data)
+      })
+      .catch((err)=>{
+        console.log(err)
+        setData(data)
+      })
+    }
+    useEffect(()=>{
+      getCartData()
+    },[])
+    // console.log(data)
+    const subtotal = data.reduce((a, {discountedPriceText}) => a + (discountedPriceText * qty), 0);
+    const totalMrp = data.reduce((a, {actualPriceText}) => a + (actualPriceText * qty), 0);
+    const bagDiscount = data.reduce((a, {discount_price_box}) => a + (discount_price_box * qty), 0);
   return (
     <>
   <div className={styles.container}>
@@ -33,7 +55,7 @@ const CartPage = () => {
   </div>
   <hr />
   <div className={styles.cart_head}>
-<span><b>My Bag</b> 3 item(s)</span>
+<span><b>My Bag</b> {data.length} item(s)</span>
 </div>
  <div className={styles.cart_container}>
 <div className={styles.cart_products}>
@@ -42,7 +64,11 @@ const CartPage = () => {
     </div>
     <div className={styles.product_item}>
     {data.map((item)=>(
-        <CartProduct key={item.id} {...item}/>
+        <CartProduct key={item.id} id={item.id} discountedPriceText = {item.discountedPriceText}
+        qty={qty} setQty={setQty}
+        actualPriceText={item.actualPriceText} discount_price_box={item.discount_price_box}
+        clr_shade_4={item.clr_shade_4} productImgTagSrc={item.productImgTagSrc} setData={setData} getCartData={getCartData}/>
+
     )
     )}
     </div>
@@ -77,7 +103,7 @@ const CartPage = () => {
         </div>
         <div className={styles.price_summary_component}>
        <p>Total MRP (Incl. of taxes) </p>
-       <p>₹ 4097</p>
+       <p>₹ {totalMrp}</p>
         </div>
         <div className={styles.price_summary_component}>
        <p>Shipping Charges </p>
@@ -85,19 +111,19 @@ const CartPage = () => {
         </div>
         <div className={styles.price_summary_component}>
        <p>Bag Discount </p>
-       <p>₹ 4097</p>
+       <p>₹ {bagDiscount}</p>
         </div>
         <div className={styles.price_summary_component}>
        <p>Subtotal </p>
-       <p>₹ 4097</p>
+       <p>₹ {subtotal}</p>
         </div>
         <hr />
         <div className={styles.total}>
        <div>
         <p>Total</p>
-        <span>₹ 2352</span>
+        <span>₹ {subtotal}</span>
         </div>
-       <button>CONTINUE</button>
+       <button><Link to ="/payment" >CONTINUE</Link></button>
         </div>
     </div>
 </div>

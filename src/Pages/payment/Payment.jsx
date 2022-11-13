@@ -1,25 +1,56 @@
 
-import { Checkbox } from '@chakra-ui/react'
-import React from 'react'
+import { Alert, AlertDescription, AlertIcon, AlertTitle, Box, Button, Checkbox, CloseButton, useDisclosure } from '@chakra-ui/react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import styles from './Payment.module.css'
 
 const Payment = () => {
-    const data =  [
-        {
-            "image": "https://images.bewakoof.com/t320/unisex-tie-dye-t-shirt-521176-1659110437-1.jpg",
-            "name": "Unisex Very Peri Tie & Dye T-shirt",
-            "price": 560,
-            "mrp": "₹1099",
-            "discount": "You saved ₹539!"
-          },
-          {
-            "image": "https://images.bewakoof.com/t320/unisex-tie-dye-t-shirt-521176-1659110437-1.jpg",
-            "name": "Unisex Very Peri Tie & Dye T-shirt",
-            "price": 560,
-            "mrp": "₹1099",
-            "discount": "You saved ₹539!"
-          }
-    ]
+
+    // const data =  [
+    //     {
+    //         "image": "https://images.bewakoof.com/t320/unisex-tie-dye-t-shirt-521176-1659110437-1.jpg",
+    //         "name": "Unisex Very Peri Tie & Dye T-shirt",
+    //         "price": 560,
+    //         "mrp": "₹1099",
+    //         "discount": "You saved ₹539!"
+    //       },
+    //       {
+    //         "image": "https://images.bewakoof.com/t320/unisex-tie-dye-t-shirt-521176-1659110437-1.jpg",
+    //         "name": "Unisex Very Peri Tie & Dye T-shirt",
+    //         "price": 560,
+    //         "mrp": "₹1099",
+    //         "discount": "You saved ₹539!"
+    //       }
+    // ]
+    const [data,setData] = useState([])
+    const [showAlert, setShowAlert] = useState(false)
+    const navigate = useNavigate()
+    const getCartData = () =>{
+      axios.get("http://localhost:8080/cartdata")
+      .then((res)=>{
+        setData(res.data)
+        // console.log(res.data)
+      })
+      .catch((err)=>{
+        console.log(err)
+        setData(data)
+      })
+    }
+    const subtotal = data.reduce((a, {discountedPriceText}) => a + discountedPriceText, 0);
+    const totalMrp = data.reduce((a, {actualPriceText}) => a + actualPriceText, 0);
+    const bagDiscount = data.reduce((a, {discount_price_box}) => a + discount_price_box, 0);
+    useEffect(()=>{
+      getCartData()
+      if(showAlert === true){
+      
+        setTimeout(()=>{
+         navigate("/")
+        },2000)
+      }
+    },[data])
+    // console.log(data)
+
   return (
     <>
  <div className={styles.container}>
@@ -32,6 +63,15 @@ const Payment = () => {
     </div>
   </div>
   <hr />
+  {showAlert && (
+         <Alert status='success' variant='solid' pl='110px'>
+         <AlertIcon />
+         Order is Placed !  
+       </Alert>
+      
+      )
+  
+      }      
   <div className={styles.head}>
     <b>Choose your payment method</b>
   </div>
@@ -62,13 +102,15 @@ const Payment = () => {
     </div>
    <div className={styles.card_form_checkbox}>
    <input type="checkbox" />
-    <label for="scales">Save card details for later</label>
+    <label for="scales">Cash on Delivery</label>
    </div>
    <div className={styles.card_form_text}>
     <p>This transaction you make is totally secure. We don't save your CVV number.</p>
    </div>
    <div className={styles.card_form_button}>
-    <button>Pay 2324</button>
+    
+    <button onClick={()=>setShowAlert(true)}>Pay {subtotal}</button>
+    
    </div>
     </div>
   
@@ -85,9 +127,9 @@ const Payment = () => {
 {data.map((item)=>{
     return(
         <div className={styles.payment_component_product}>
-        <img src={item.image} alt="" width="50px"/>
+        <img src={item.productImgTagSrc} alt="" width="50px"/>
        <div>
-       <p>{item.name}</p>
+       <p>{item.clr_shade_4}</p>
         <p>Estimated delivery by <span>24 November 2022</span></p>
        </div>
         </div>
@@ -99,7 +141,7 @@ const Payment = () => {
      <h4><b>Price Summary</b></h4>
      <div className={styles.payment_component_address_flex}>
         <p>Total MRP (Incl. of taxes) </p>
-        <p>₹ 999</p>
+        <p>₹ {totalMrp}</p>
      </div>
      <div className={styles.payment_component_address_flex}>
         <p>Shipping Charges</p>
@@ -107,13 +149,13 @@ const Payment = () => {
      </div>
      <div className={styles.payment_component_address_flex}>
         <p>Discount on MRP </p>
-        <p>₹ 650</p>
+        <p>₹ {bagDiscount}</p>
      </div>
     </div>
     <hr className={styles.hr}/>
     <div className={styles.payment_component_address_flex}>
         <p><b>Final amount </b></p>
-        <p><b>₹ 652</b></p>
+        <p><b>₹ {subtotal}</b></p>
      </div>
     </div>
   </div>

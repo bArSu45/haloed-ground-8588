@@ -1,8 +1,28 @@
 import { Divider, Select, Stack } from '@chakra-ui/react'
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import styles from './CartProduct.module.css'
 
-const CartProduct = ({...item}) => {
+const CartProduct = ({id,qty,setQty,productImgTagSrc,clr_shade_4,discountedPriceText,actualPriceText,discount_price_box,setData,getCartData}) => {
+  // console.log(item)
+//   function removeItem(id){
+//     console.log(id)
+//     // setData(item.filter((el)=>el.id != id))
+// }
+const deleteDataFromCart = (id) =>{
+  // console.log(id)
+  axios.delete(`http://localhost:8080/cartdata/${id}`)
+ getCartData()
+}
+useEffect(()=>{
+  deleteDataFromCart()
+ 
+},[])
+
+// const calculate =(e,discountedPriceText)=>{
+// setQty(qty * discountedPriceText)
+// }
+console.log(qty)
   return (
     <div className={styles.container}>
      <div className={styles.offers}>
@@ -14,9 +34,9 @@ const CartProduct = ({...item}) => {
      </div>
      <div className={styles.description}>
      <div className={styles.description_right}>
-        <p>Unisex Very Peri Tie & Dye T-Shirt</p>
-        <p><b>₹{item.price}</b><span className={styles.text_strike}>{item.mrp}</span></p>
-        <span>{item.discount}</span>
+        <p>{clr_shade_4}</p>
+        <p><b>₹{discountedPriceText}</b><span className={styles.text_strike}>₹{actualPriceText}</span></p>
+        <span>You saved ₹{discount_price_box} !</span>
         <div className={styles.select_box}>
    <div>
     <Select placeholder='Size' size='xs'>
@@ -29,29 +49,31 @@ const CartProduct = ({...item}) => {
 </Select>
     </div>
     <div>
-    <Select placeholder='Qty' size='xs'>
-  <option value='option1'>1</option>
-  <option value='option2'>2</option>
-  <option value='option3'>3</option>
-  <option value='option1'>4</option>
-  <option value='option2'>5</option>
-  <option value='option3'>6</option>
-  <option value='option1'>7</option>
-  <option value='option2'>8</option>
-  <option value='option3'>9</option>
-  <option value='option3'>10</option>
+    <Select placeholder='Qty' size='xs' value={qty} onChange={(e)=>
+      setQty(e.target.value)
+    }>
+  <option value='1' >1</option>
+  <option value='2'>2</option>
+  <option value='3'>3</option>
+  <option value='4'>4</option>
+  <option value='5'>5</option>
+  <option value='6'>6</option>
+  <option value='7'>7</option>
+  <option value='8'>8</option>
+  <option value='9'>9</option>
+  <option value='10'>10</option>
 </Select>
     </div>
    </div>
      </div>
      <div className={styles.description_img}>
-        <img src={item.image} alt="" width="100px"/>
+        <img src={productImgTagSrc} alt="" width="100px"/>
      </div>
     
      </div>
      <hr />
   <div className={styles.bottom_btn}>
-    <div><button>Remove</button></div>
+    <div><button onClick={() => deleteDataFromCart(id)}>Remove</button></div>
     <div className={styles.vertical_line}></div>
     <div><button>Move to wishlist</button></div>
   </div>
