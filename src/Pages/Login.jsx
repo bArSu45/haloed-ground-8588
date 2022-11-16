@@ -43,6 +43,7 @@ export default function Login() {
         alert("successfull");
         localStorage.setItem("sts", JSON.stringify(true));
         localStorage.setItem("email", JSON.stringify(user.email));
+        localStorage.setItem("name", JSON.stringify(user.name));
         navigate("/")
         localStorage.setItem("signin", JSON.stringify(userData));
         // window.location.href = "index.html"

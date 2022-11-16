@@ -2,6 +2,7 @@ import { Box, Button, Heading, HStack, Input, PinInput, PinInputField, Stack, Te
 import React, { useEffect, useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import Navbar from '../Components/Navbar'
+import Aler from './Alert'
 
 const Otp = () => {
   var mobilesign = JSON.parse(localStorage.getItem("mobile"))
@@ -10,6 +11,7 @@ const Otp = () => {
   const[min,setMin]=useState(1)
   const navigate=useNavigate()
   const[second,setSecond]=useState(59)
+  const [success, setSuccess] = useState(false);
   let timer;
   useEffect(() => {
      timer = setInterval(() => {setSecond(second - 1)
@@ -32,7 +34,9 @@ const Otp = () => {
       console.log("hjj",otp)
       if(true){
         localStorage.setItem("sts", JSON.stringify(true));
-        navigate("/")
+setSuccess(true)
+navigate("/alert")
+        // navigate("/")
       }
     }
   return (
@@ -55,7 +59,7 @@ const Otp = () => {
 </HStack>
 <Box fontFamily="bold">RESEND OTP in {min}:{second}s</Box>
 <Box><Button  onClick={onClick}>LOGIN</Button></Box>
-
+{success?<Aler/>:<></>}
     </Stack>
     </extendTheme>
   )

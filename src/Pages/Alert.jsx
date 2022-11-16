@@ -1,8 +1,9 @@
-import { AlertDescription, AlertIcon, AlertTitle, Box, Button, CloseButton, useDisclosure } from '@chakra-ui/react'
+import { Alert, AlertDescription, AlertIcon, AlertTitle, Box, Button, CloseButton, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const Alert = () => {
-   
+const Aler = () => {
+   const nav=useNavigate()
         const {
           isOpen: isVisible,
           onClose,
@@ -23,10 +24,10 @@ const Alert = () => {
 >
   <AlertIcon boxSize='40px' mr={0} />
   <AlertTitle mt={4} mb={1} fontSize='lg'>
-    Application submitted!
+   
   </AlertTitle>
   <AlertDescription maxWidth='sm'>
-    Thanks for submitting your application. Our team will get back to you soon.
+    <Button onClick={()=>nav("/") }  > Home  </Button>
   </AlertDescription>
 </Alert>
         
@@ -34,4 +35,4 @@ const Alert = () => {
         </>)
 }
 
-export default Alert
+export default Aler

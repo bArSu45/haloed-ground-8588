@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router'
 import PrivateRoute from '../Components/PrivateRoute'
 
 import AdminPage from './AdminPage/AdminPage'
+import Aler from './Alert'
 import Alert from './Alert'
 import CartPage from './CartPage/CartPage'
 import HomePage from './HomePage/HomePage'
@@ -32,7 +33,7 @@ const MainRoutes = () => {
             <Route path="/cart" element={  <PrivateRoute><CartPage />  </PrivateRoute>} />
            
            
-            <Route path="/alert" element={<Alert />} />
+            <Route path="/alert" element={<Aler />} />
              <Route path="/sorting" element={<Sorting />} />
 
         </Routes>

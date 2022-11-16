@@ -70,8 +70,8 @@ status:true,
         console.log("datddddd", res.data);
         setLs(true)
         localStorage.setItem("sts", JSON.stringify(true));
-       
-        navigate("/email")
+        localStorage.setItem("email", JSON.stringify(userdata.email));
+        navigate("/")
       })
       .catch((e) => {
         console.log(e);
