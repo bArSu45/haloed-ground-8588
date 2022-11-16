@@ -344,7 +344,7 @@ const BottomNav = () => {
                   <Link to="/login">
                     {" "}
                     <span>{sts?
-                    <Box fontSize="12px" className="drop">
+                    <Box disabled={true} fontSize="12px" className="drop">
                     <Heading fontSize="12px">
                       <AvatarGroup spacing='1rem'>
                     <Avatar boxSize={8} bg='teal.500' />
