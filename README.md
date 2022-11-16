@@ -28,7 +28,7 @@
 ### Cart Page
 ![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/cartpage.png)
 ### Payment Page
-![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/paymentage.png)
+![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/paymentpage.png)
 
 
 
