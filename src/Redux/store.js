@@ -1,10 +1,12 @@
-import { legacy_createStore, applyMiddleware, combineReducers } from 'redux';
-import thunk from "redux-thunk"
+import { applyMiddleware, combineReducers, compose, legacy_createStore } from 'redux'
 import { reducer as AppReducer } from './AppReducer/reducer'
 import { reducer as AuthReducer } from './AuthReducer/reducer'
-// AppReducer,AuthReducer
-const rootReducer = combineReducers({ AppReducer, AuthReducer })
-const store = legacy_createStore(rootReducer,applyMiddleware(thunk))
-export { store };
+import thunk from 'redux-thunk'
 
-// NOTE: Do not remove this code,its used for calculating your score, if removed it will give you zero marks
+const composeEnhancers = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose;
+
+const rootReducer = combineReducers({ AppReducer, AuthReducer })
+
+export const store = legacy_createStore(rootReducer,
+    composeEnhancers(applyMiddleware(thunk))
+)

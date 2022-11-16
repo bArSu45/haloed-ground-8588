@@ -5,8 +5,15 @@ import { useEffect } from 'react'
 import { Box, Button, Select, Stack } from '@chakra-ui/react'
 import styles from './MensPage.module.css'
 import Navbar from '../../Components/Navbar'
+import { useDispatch, useSelector } from 'react-redux'
+import { getMusicRecord } from '../../Redux/AppReducer/action'
+import { useLocation, useSearchParams } from 'react-router-dom'
 
 export default function MensPage() {
+  const [searchParams] = useSearchParams()
+  const musicRecords = useSelector((store) => store.AppReducer.musicRecords)
+  const dispatch = useDispatch()
+  const location = useLocation();
   const [mensData, setMensData] = useState([])
   const [sortBy, setSortyBy] = useState("")
   const [filter, setFilter] = useState('')
@@ -55,7 +62,7 @@ export default function MensPage() {
     getWholeMensData(sortBy)
 
   }, [sortBy])
-  console.log("ff", mensData)
+  console.log("ff", musicRecords)
   const addCartData = (data) => {
     axios.post("https://clickandbuy-json-server.onrender.com/cartdata", data).then((r) => {
 
@@ -66,7 +73,19 @@ export default function MensPage() {
       })
   }
 
-
+  useEffect(() => {
+    if (location || musicRecords.length === 0) {
+        const genre = searchParams.getAll('genre');
+        const queryParams = {
+            params: {
+                genre: genre,
+                _sort: searchParams.get("sortBy") && "year",
+                _order: searchParams.get("sortBy")
+            }
+        }
+        dispatch(getMusicRecord(queryParams))
+    }
+}, [location.search])
   return (
     <>   <Navbar />
       <div id={styles.product_sidebar_main_div}>
@@ -125,7 +144,7 @@ export default function MensPage() {
           </Stack>
         </div>
         <div id={styles.mensPage_main_div}>
-          {mensData.length > 0 && mensData.map((item) => {
+          {musicRecords.length > 0 && musicRecords.map((item) => {
             return (
 
               <div key={item.id} id={styles.mensPage_grid_boxez}>
