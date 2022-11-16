@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router'
-import PrivateRoute from '../Components/PrivateRoute'
+
 import AdminPage from './AdminPage/AdminPage'
 import Alert from './Alert'
 import CartPage from './CartPage/CartPage'
