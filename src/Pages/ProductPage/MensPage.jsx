@@ -77,10 +77,10 @@ export default function MensPage() {
 
   useEffect(() => {
     if (location || musicRecords.length === 0) {
-        const genre = searchParams.getAll('genre');
+        const brand_namez = searchParams.getAll('brand_namez');
         const queryParams = {
             params: {
-                genre: genre,
+              brand_namez: brand_namez,
                 _sort: searchParams.get("sortBy") && "discount_price_box",
                 _order: searchParams.get("sortBy")
             }
@@ -90,7 +90,7 @@ export default function MensPage() {
 }, [location.search])
 const [searchParams, setSearchParams] = useSearchParams();
     const [sortBy, setSortBy] = useState(searchParams.get("sortBy") || "")
-    const [category, setCategory] = useState(searchParams.getAll("genre") || []);
+    const [category, setCategory] = useState(searchParams.getAll("brand_namez") || []);
 
     const HandleFilter = (e) => {
         const option = e.target.value
@@ -112,7 +112,7 @@ const [searchParams, setSearchParams] = useSearchParams();
 
     useEffect(() => {
         const params = {};
-        category && (params.genre = category);
+        category && (params.brand_namez = category);
         sortBy && (params.sortBy = sortBy);
         setSearchParams(params);
     }, [category, setSearchParams, sortBy])
@@ -125,28 +125,28 @@ const [searchParams, setSearchParams] = useSearchParams();
         <div>
             <h2>Filter</h2>
             <div>
-                <input type="checkbox" value='K-Pop'
+                <input type="checkbox" value='Burberry'
                     onChange={HandleFilter}
-                    defaultChecked={category.includes('K-Pop')} />
-                <label >K-Pop</label>
+                    defaultChecked={category.includes('Burberry')} />
+                <label >Burberry</label>
             </div>
             <div>
-                <input type="checkbox" value='Country'
-                    defaultChecked={category.includes('Country')}
+                <input type="checkbox" value='Click n Buy'
+                    defaultChecked={category.includes('Click n Buy')}
                     onChange={HandleFilter} />
-                <label >Country</label>
+                <label >Click n Buy</label>
             </div>
             <div>
-                <input type="checkbox" value='Pop'
-                    defaultChecked={category.includes('Pop')}
+                <input type="checkbox" value='Prada'
+                    defaultChecked={category.includes('Prada')}
                     onChange={HandleFilter} />
-                <label >Pop</label>
+                <label >Prada</label>
             </div>
             <div>
-                <input type="checkbox" value='Heavy Metal'
-                    defaultChecked={category.includes('Heavy Metal')}
+                <input type="checkbox" value='Louis Vuitton'
+                    defaultChecked={category.includes('Louis Vuitton')}
                     onChange={HandleFilter} />
-                <label >Heavy Metal</label>
+                <label >Louis Vuitton</label>
             </div>
 
             <h2>Sort</h2>
