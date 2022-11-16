@@ -14,14 +14,14 @@
 ### Home page
 ![Homepage]("C:\Users\pc\Pictures\Screenshots\06.05.2022_05.35.07_REC.png")
 ### SignUp Page
-![](https://github.com/Shimbhu77/boAt-Clone/blob/main/Images/Screenshot%20(357).png)
+![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/homepage.png)
 ### Login Page
-![](https://github.com/Shimbhu77/boAt-Clone/blob/main/Images/Screenshot%20(358).png)
+![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/login&signpage.png)
 ### Profile Page
-![](https://github.com/Shimbhu77/boAt-Clone/blob/main/Images/Screenshot%20(359).png)
+![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/homepage.png)
 ### Profile Edit Page
-![](https://github.com/Shimbhu77/boAt-Clone/blob/main/Images/Screenshot%20(364).png)
+![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/homepage.png)
 ### Cart Page
-![](https://github.com/Shimbhu77/boAt-Clone/blob/main/Images/Screenshot%20(362).png)
+![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/cartpage.png)
 ### Payment Page
-![](https://github.com/Shimbhu77/boAt-Clone/blob/main/Images/Screenshot%20(363).png)
+![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/paymentPage.png)
