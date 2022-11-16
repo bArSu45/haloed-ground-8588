@@ -8,63 +8,13 @@ import Navbar from '../../Components/Navbar'
 import { useDispatch, useSelector } from 'react-redux'
 import { getMusicRecord } from '../../Redux/AppReducer/action'
 import { useLocation, useSearchParams } from 'react-router-dom'
-// import  { useState } from 'react'
-// import { useSearchParams } from 'react-router-dom'
-// import { useEffect } from 'react'
+
 export default function MensPage() {
-  // const [searchParams] = useSearchParams()
+ 
   const musicRecords = useSelector((store) => store.AppReducer.musicRecords)
   const dispatch = useDispatch()
   const location = useLocation();
-  // const [mensData, setMensData] = useState([])
-  // const [sortBy, setSortyBy] = useState("")
-  // const [filter, setFilter] = useState('')
-  // const [data, setData] = useState([])
-  // const getMensData = (sortBy, filter) => {
-  //   axios.get(`https://clickandbuy-json-server.onrender.com/mensdata?_sort=discount_price_box&_order=${sortBy}&brand_namez=${filter}`)
-  //     .then((res) => {
-  //       setMensData(res.data)
 
-  //     }).catch((e) => {
-  //       console.log(e)
-  //     })
-  // }
-
-  // const getWholeMensData = (sortBy) => {
-  //   axios.get(`https://clickandbuy-json-server.onrender.com/mensdata?_sort=discount_price_box&_order=${sortBy}`)
-  //     .then((res) => {
-  //       setMensData(res.data)
-
-  //     }).catch((e) => {
-  //       console.log(e)
-  //     })
-  // }
-  // const handleFilter = (e) => {
-
-  //   setFilter(e.target.value)
-
-  // }
-  // const Sortin = (e) => {
-
-  //   setSortyBy(e.target.value)
-  //   console.log("ff", sortBy)
-  // }
-  // useEffect(() => {
-  //   // getMensData()
-  //   if (filter !== "Brand") {
-
-  //     getMensData(sortBy, filter)
-  //   } else {
-  //     getWholeMensData(sortBy)
-  //   }
-
-  //   // console.log(mensData)
-  // }, [sortBy, filter])
-  // useEffect(() => {
-  //   getWholeMensData(sortBy)
-
-  // }, [sortBy])
-  // console.log("ff", musicRecords)
   const addCartData = (data) => {
     axios.post("https://clickandbuy-json-server.onrender.com/cartdata", data).then((r) => {
 
