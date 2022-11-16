@@ -1,5 +1,5 @@
 # Click&Buy
-### An online eCommerce website Buy Streetwear Collection for Men & Women Online |Click&Buy.
+### An online eCommerce website Buy Streetwear Collection for Men & Women Online | Click&Buy.
 ### A collaborative project built by a team of 4 Member executed in 4 days
 
 # Features
@@ -28,7 +28,7 @@
 ### Cart Page
 ![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/cartpage.png)
 ### Payment Page
-![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/paymentPage1.png)
+![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/paymentage.png)
 
 
 
