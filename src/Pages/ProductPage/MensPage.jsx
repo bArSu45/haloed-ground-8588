@@ -35,7 +35,7 @@ export default function MensPage() {
                 _order: searchParams.get("sortBy")
             }
         }
-        dispatch(getMusicRecord(queryParams))
+        dispatch(getMusicRecord("mensdata",queryParams))
     }
 }, [location.search])
 const [searchParams, setSearchParams] = useSearchParams();

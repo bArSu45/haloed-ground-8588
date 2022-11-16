@@ -5,57 +5,15 @@ import { useEffect } from 'react'
 import { Box, Button, Select, Stack } from '@chakra-ui/react'
 import styles from './MensPage.module.css'
 import Navbar from '../../Components/Navbar'
+import { useLocation, useSearchParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { getMusicRecord } from '../../Redux/AppReducer/action'
 
 export default function MensPage() {
-  const [mensData, setMensData] = useState([])
-  const [sortBy, setSortyBy] = useState("")
-  const [filter, setFilter] = useState('')
-  // const [data, setData] = useState([])
-  const getMensData = (sortBy, filter) => {
-    axios.get(`https://clickandbuy-json-server.onrender.com/womensdata?_sort=discount_price_box&_order=${sortBy}&brand_namez=${filter}`)
-      .then((res) => {
-        setMensData(res.data)
+  const musicRecords = useSelector((store) => store.AppReducer.musicRecords)
+  const dispatch = useDispatch()
+  const location = useLocation();
 
-      }).catch((e) => {
-        console.log(e)
-      })
-  }
-
-  const getWholeMensData = (sortBy) => {
-    axios.get(`https://clickandbuy-json-server.onrender.com/womensdata?_sort=discount_price_box&_order=${sortBy}`)
-      .then((res) => {
-        setMensData(res.data)
-
-      }).catch((e) => {
-        console.log(e)
-      })
-  }
-  const HandleFilter = (e) => {
-
-    setFilter(e.target.value)
-
-  }
-  const Sortin = (e) => {
-
-    setSortyBy(e.target.value)
-    console.log("ff", sortBy)
-  }
-  useEffect(() => {
-    // getMensData()
-    if (filter !== "Brand") {
-
-      getMensData(sortBy, filter)
-    } else {
-      getWholeMensData(sortBy)
-    }
-
-    // console.log(mensData)
-  }, [sortBy, filter])
-  useEffect(() => {
-    getWholeMensData(sortBy)
-
-  }, [sortBy])
-  console.log("ff", mensData)
   const addCartData = (data) => {
     axios.post("https://clickandbuy-json-server.onrender.com/cartdata", data).then((r) => {
 
@@ -66,6 +24,47 @@ export default function MensPage() {
       })
   }
 
+  useEffect(() => {
+    if (location || musicRecords.length === 0) {
+        const brand_namez = searchParams.getAll('brand_namez');
+        const queryParams = {
+            params: {
+              brand_namez: brand_namez,
+                _sort: searchParams.get("sortBy") && "discount_price_box",
+                _order: searchParams.get("sortBy")
+            }
+        }
+        dispatch(getMusicRecord("womensdata",queryParams))
+    }
+}, [location.search])
+const [searchParams, setSearchParams] = useSearchParams();
+    const [sortBy, setSortBy] = useState(searchParams.get("sortBy") || "")
+    const [category, setCategory] = useState(searchParams.getAll("brand_namez") || []);
+
+    const HandleFilter = (e) => {
+        const option = e.target.value
+        let newCategory = [...category];
+        if (newCategory.includes(option)) 
+        {
+            newCategory.splice(newCategory.indexOf(option), 1)
+        }
+        else 
+        {
+            newCategory.push(option)
+        }
+        setCategory(newCategory)
+    }
+
+    const HandleSortBy = (e) => {
+        setSortBy(e.target.value)
+    }
+
+    useEffect(() => {
+        const params = {};
+        category && (params.brand_namez = category);
+        sortBy && (params.sortBy = sortBy);
+        setSearchParams(params);
+    }, [category, setSearchParams, sortBy])
 
   return (
     <>   <Navbar />
@@ -73,59 +72,50 @@ export default function MensPage() {
 
         <div id={styles.sidebar}>
 
-          <Stack spacing={10}>
-            <Select onChange={Sortin} placeholder='Sort' size='md' borderBottomColor='grey' borderLeftColor='white' borderRightColor='white' borderTopColor='white'>
-              <option value='asc'>Low - High</option>
-              <option value='desc'>High - Low</option>
-            </Select>
-            <Select onChange={HandleFilter} size='md' borderBottomColor='grey' borderLeftColor='white' borderRightColor='white' borderTopColor='white'>
-              <option value='Brand'>Brand</option>
-              <option value='Gucci'>Gucci</option>
-              <option value='Burberry'>Burberry</option>
-              <option value='Prada'>Prada</option>
-              <option value='Louis Vuitton'>Louis Vuitton</option>
-              <option value='Click n Buy'>Click n Buy</option>
-            </Select>
-            <Select placeholder='Category' size='md' borderBottomColor='grey' borderLeftColor='white' borderRightColor='white' borderTopColor='white'>
-              <option value='T-Shirts'>T-Shirts</option>
-              <option value='Shirts'>Shirts</option>
-              <option value='Shorts'>Shorts</option>
-            </Select>
-            <Select placeholder='Size' size='md' borderBottomColor='grey' borderLeftColor='white' borderRightColor='white' borderTopColor='white'>
-              <option value='Small'>Small</option>
-              <option value='Large'>Large</option>
-              <option value='X-large'>X-large</option>
-            </Select>
-            <Select placeholder='Color' size='md' borderBottomColor='grey' borderLeftColor='white' borderRightColor='white' borderTopColor='white'>
-              <option value='Black'>Black</option>
-              <option value='White'>White</option>
-              <option value='Red'>Red</option>
-            </Select>
-            <Select placeholder='Design' size='md' borderBottomColor='grey' borderLeftColor='white' borderRightColor='white' borderTopColor='white'>
-              <option value='Solid'>Solid</option>
-              <option value='Printed'>Printed</option>
-              <option value='Checked'>Checked</option>
-            </Select>
-            <Select placeholder='Fit' size='md' borderBottomColor='grey' borderLeftColor='white' borderRightColor='white' borderTopColor='white'>
-              <option value='Oversized'>Oversized</option>
-              <option value='Skinny Fit'>Skinny Fit</option>
-              <option value='Regular Fit'>Regular Fit</option>
-            </Select>
-            <Select placeholder='Neck' size='md' borderBottomColor='grey' borderLeftColor='white' borderRightColor='white' borderTopColor='white'>
-              <option value='Round Neck'>Round Neck</option>
-              <option value='V Neck'>V Neck</option>
-              <option value='Hooded'>Hooded</option>
-            </Select>
-            <Select placeholder='Sleeve' size='md' borderBottomColor='grey' borderLeftColor='white' borderRightColor='white' borderTopColor='white'>
-              <option value='Half Sleeve'>Half Sleeve</option>
-              <option value='Full Sleeve'>Full Sleeve</option>
-              <option value='Sleeveless'>Sleeveless</option>
-            </Select>
+        <div>
+            <h2>Filter</h2>
+            <div>
+                <input type="checkbox" value='Burberry'
+                    onChange={HandleFilter}
+                    defaultChecked={category.includes('Burberry')} />
+                <label >Burberry</label>
+            </div>
+            <div>
+                <input type="checkbox" value='Click n Buy'
+                    defaultChecked={category.includes('Click n Buy')}
+                    onChange={HandleFilter} />
+                <label >Click n Buy</label>
+            </div>
+            <div>
+                <input type="checkbox" value='Prada'
+                    defaultChecked={category.includes('Prada')}
+                    onChange={HandleFilter} />
+                <label >Prada</label>
+            </div>
+            <div>
+                <input type="checkbox" value='Louis Vuitton'
+                    defaultChecked={category.includes('Louis Vuitton')}
+                    onChange={HandleFilter} />
+                <label >Louis Vuitton</label>
+            </div>
 
-          </Stack>
+            <h2>Sort</h2>
+            <div onChange={HandleSortBy}>
+                <div>
+                    <input type="radio" value="asc" name='sortBy'
+                        defaultChecked={sortBy === "asc"} />
+                    <label >Asc</label>
+                </div>
+                <div>
+                    <input type="radio" value="desc" name='sortBy'
+                        defaultChecked={sortBy === "desc"} />
+                    <label>Desc</label>
+                </div>
+            </div>
+            </div>
         </div>
         <div id={styles.mensPage_main_div}>
-          {mensData.length > 0 && mensData.map((item) => {
+          {musicRecords.length > 0 && musicRecords.map((item) => {
             return (
 
               <div key={item.id} id={styles.mensPage_grid_boxez}>

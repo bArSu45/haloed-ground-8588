@@ -20,9 +20,9 @@ export const getMusicRecordFailure = () => {
     }
 }
 
-export const getMusicRecord = (queryParams) => (dispatch) => {
+export const getMusicRecord = (data, queryParams) => (dispatch) => {
     dispatch(getMusicRecordRequest());
-    return axios.get("https://clickandbuy-json-server.onrender.com/mensdata", queryParams)
+    return axios.get(`https://clickandbuy-json-server.onrender.com/${data}`, queryParams)
         .then((res) => {
             dispatch(getMusicRecordSuccess(res.data))
         })

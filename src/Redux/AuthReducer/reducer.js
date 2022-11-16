@@ -1,40 +1,44 @@
-// NOTE: DO NOT MODIFY the intial state structure in this file.
-import * as types from './actionTypes';
+import * as types from './actionTypes'
+
 const initialState = {
     isAuth: false,
-    token: "",
-    isLoading: false,
-    isError: false,
-};
+    token: '',
 
-const reducer = (state = initialState, action) => {
-    const { type, payload } = action;
-    switch (type) {
-        case types.LOGIN_REQUEST:
-            return {
-                ...state,
-                isLoading: true,
-
-            }
-        case types.LOGIN_SUCCESS:
-            return {
-                ...state,
-                isLoading: false,
-                isAuth: true,
-                tokon: payload,
-            }
-        case types.LOGIN_FAILURE:
-            return {
-                ...state,
-                isLoading: false,
-                tokon: '',
-                isError: true,
-
-            }
-        default:
-            return state
-    }
-
+    isAuthLoading: false,
+    isAuthError: false
 }
 
-export { reducer }
+
+export const reducer = (state = initialState, action) => {
+    const { type, payload } = action;
+
+    switch (type) {
+        case types.USER_LOGIN_REQUEST:
+            {
+                return {
+                    ...state,
+                    isAuthLoading: true
+                }
+            }
+        case types.USER_LOGIN_SUCCESS:
+            {
+                return {
+                    ...state,
+                    isAuthLoading: false,
+                    isAuth: true,
+                    token: payload,
+
+                }
+            }
+        case types.USER_LOGIN_FAILURE:
+            {
+                return {
+                    ...state,
+                    isAuthLoading: false,
+                    isAuthError: true
+                }
+            }
+        default:
+            return  state    
+    }
+}

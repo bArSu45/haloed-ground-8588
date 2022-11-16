@@ -1,49 +1,39 @@
-// import React from 'react'
-import axios from "axios";
-import * as types from './actionTypes';
-// console.log(types)
-const postLoginRequest = () => {
-    return { type: types.LOGIN_REQUEST, }
+import axios from 'axios'
+import * as types from './actionTypes'
 
+export const postLoginRequest = () => {
+    return {
+        type: types.USER_LOGIN_REQUEST
+    }
 }
-const postLoginSuccess = () => {
-    return { type: types.LOGIN_SUCCESS, }
 
+export const postLoginSuccess = (payload) => {
+    return {
+        type: types.USER_LOGIN_SUCCESS,
+        payload
+    }
 }
-const postLoginFailure = () => {
-    return { type: types.LOGIN_FAILURE, }
 
+export const postLoginFailure = () => {
+    return {
+        type: types.USER_LOGIN_FAILURE
+    }
 }
-const login = (payload) => (dispatch) => {
-    dispatch(postLoginRequest());
+
+export const login = (payload) => (dispatch) => {
+    dispatch(postLoginRequest())
+
     return axios({
-            method: "post",
-            url: "/api/login",
-            baseURL: "https://reqres.in",
-            data: payload,
+            method: 'post',
+            url: '/api/login',
+            baseURL: 'https://reqres.in',
+            data: payload
         })
-        .then((r) =>
-            // console.log(r.data)
-            dispatch(postLoginSuccess(r.data.tokon))
-        )
+        .then((r) => {
+            console.log(r.data.token)
+            dispatch(postLoginSuccess(r.data.token))
+        })
         .catch((e) => {
-            dispatch(postLoginFailure());
+            dispatch(postLoginFailure())        
         })
-
 }
-const postData = (payload) => (dispatch) => {
-    // dispatch(postRequest());
-    return axios.post('http://localhost:8080/products', {
-            name: payload.name,
-            catagary: payload.catagary,
-            image: payload.img,
-            price: payload.price
-        })
-        .then(function(response) {
-            console.log(response);
-        })
-        .catch(function(error) {
-            console.log(error);
-        });
-}
-export { login, postLoginRequest, postLoginSuccess, postLoginFailure, postData };
