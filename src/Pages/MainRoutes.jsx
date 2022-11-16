@@ -28,9 +28,9 @@ const MainRoutes = () => {
             <Route path="/womens" element={<WomensPage />} />
             <Route path="/mens" element={<MensPage />} />
             <Route path="/admin" element={<AdminPage />} />
-            <PrivateRoute>
-            <Route path="/cart" element={<CartPage />} />
-            </PrivateRoute>
+           
+            <Route path="/cart" element={  <PrivateRoute><CartPage />  </PrivateRoute>} />
+           
            
             <Route path="/alert" element={<Alert />} />
              <Route path="/sorting" element={<Sorting />} />
