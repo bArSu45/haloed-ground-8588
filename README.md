@@ -21,15 +21,16 @@
 ![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/signupPage.png)
 ###login & Admin Page
 ![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/login&adminPage.png)
-### Cart Page
-![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/cartpage.png)
-### Payment Page
-![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/paymentPage.png)
-
-
 ### Mens Page
 ![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/menspage.png)
 ### Womens Page
 ![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/womenspage.png)
+### Cart Page
+![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/cartpage.png)
 ### Payment Page
-![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/paymentPage.png)
+![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/paymentPage1.png)
+
+
+
+### Payment Page
+![](https://github.com/bArSu45/haloed-ground-8588/blob/main/public/image/paymentpage1.png)
