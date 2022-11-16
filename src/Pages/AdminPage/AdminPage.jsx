@@ -16,7 +16,7 @@ const AdminPage = () => {
     const [category, setCategory] = useState("")
 
     const getMensData = () => {
-        axios.get("http://localhost:8080/mensdata")
+        axios.get("https://clickandbuy-json-server.onrender.com/mensdata")
             .then((res) => {
                 setMensData(res.data)
             }).catch((e) => {
@@ -29,7 +29,7 @@ const AdminPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         // console.log(product)
-        axios.post(`http://localhost:8080/${category}`, product)
+        axios.post(`https://clickandbuy-json-server.onrender.com/${category}`, product)
             .then((res) => {
                 // setProduct(res.data)
                 getMensData()

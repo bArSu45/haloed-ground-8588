@@ -12,7 +12,7 @@ export default function MensPage() {
   const [filter, setFilter] = useState('')
   // const [data, setData] = useState([])
   const getMensData = (sortBy, filter) => {
-    axios.get(`http://localhost:8080/mensdata?_sort=discount_price_box&_order=${sortBy}&brand_namez=${filter}`)
+    axios.get(`https://clickandbuy-json-server.onrender.com/mensdata?_sort=discount_price_box&_order=${sortBy}&brand_namez=${filter}`)
       .then((res) => {
         setMensData(res.data)
 
@@ -22,7 +22,7 @@ export default function MensPage() {
   }
 
   const getWholeMensData = (sortBy) => {
-    axios.get(`http://localhost:8080/mensdata?_sort=discount_price_box&_order=${sortBy}`)
+    axios.get(`https://clickandbuy-json-server.onrender.com/mensdata?_sort=discount_price_box&_order=${sortBy}`)
       .then((res) => {
         setMensData(res.data)
 
@@ -57,7 +57,7 @@ export default function MensPage() {
   }, [sortBy])
   console.log("ff", mensData)
   const addCartData = (data) => {
-    axios.post("http://localhost:8080/cartdata", data).then((r) => {
+    axios.post("https://clickandbuy-json-server.onrender.com/cartdata", data).then((r) => {
 
       console.log(r.data)
     })
