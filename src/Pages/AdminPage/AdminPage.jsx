@@ -17,15 +17,26 @@ import styles from "./AdminPage.module.css";
 const AdminPage = () => {
   var name = JSON.parse(localStorage.getItem("username"));
   const [mensData, setMensData] = useState([]);
+   const [productupdate, setProductupdate] = useState({
+    col_sm_4_href: "",
+    productImgTagSrc: "",
+    plp: "SLIM FIT",
+    brand_namez: "",
+    clr_shade_4: "",
+    discountedPriceText: "",
+    actualPriceText: "",
+    discount_price_box: "",
+   
+  });
   const [product, setProduct] = useState({
-    "col_sm_4_href": "",
-      "productImgTagSrc": "",
-      "plp": "SLIM FIT",
-      "brand_namez": "",
-      "clr_shade_4": "",
-      "discountedPriceText": "",
-      "actualPriceText": "",
-      "discount_price_box": "",
+    col_sm_4_href: "",
+    productImgTagSrc: "",
+    plp: "SLIM FIT",
+    brand_namez: "",
+    clr_shade_4: "",
+    discountedPriceText: "",
+    actualPriceText: "",
+    discount_price_box: "",
     id: "",
   });
   const [category, setCategory] = useState("");
@@ -63,12 +74,10 @@ const AdminPage = () => {
     getMensData();
   }, [mensData]);
 
-
-  const deleteDataFromCart = (id) =>{
+  const deleteDataFromCart = (id) => {
     // console.log(id)
-    axios.delete(`https://clickandbuy-json-server.onrender.com/mensdata/${id}`)
-
-  }
+    axios.delete(`https://clickandbuy-json-server.onrender.com/mensdata/${id}`);
+  };
   return (
     <div id={styles.admin_header_main_div}>
       <div id={styles.admin_header}>
@@ -88,9 +97,8 @@ const AdminPage = () => {
       <Box w="100%" display="flex" justifyContent="space-around">
         <Box W="50%">
           <div className={styles.form_element_div}>
-          
             <Input
-            placeholder="name"
+              placeholder="name"
               type="text"
               name={product.name}
               value={product.name}
@@ -98,8 +106,7 @@ const AdminPage = () => {
               onChange={(e) => setProduct({ ...product, name: e.target.value })}
             />
           </div>
-          <div >
-           
+          <div>
             <Select
               name="category"
               onChange={(e) => setCategory(e.target.value)}
@@ -109,10 +116,8 @@ const AdminPage = () => {
               <option value="womensdata">Women's Data</option>
             </Select>
           </div>
-          <div >
-            
+          <div>
             <Input
-              
               type="url"
               placeholder="Image URL"
               value={product.src}
@@ -123,7 +128,6 @@ const AdminPage = () => {
             />
           </div>
           <div className={styles.form_element_div}>
-           
             <Input
               type="number"
               value={product.actualPriceText}
@@ -131,42 +135,64 @@ const AdminPage = () => {
               onChange={(e) =>
                 setProduct({ ...product, actualPriceText: e.target.value })
               }
-             placeholder="actualPriceText"
+              placeholder="actualPriceText"
             />
           </div>
           <div style={{ textAlign: "center" }}>
-            <Button onClick={handleSubmit} >
-              Add Product
-            </Button>
+            <Button onClick={handleSubmit}>Add Product</Button>
           </div>
         </Box>
-        <Box style={{  overflow: "scroll"}} w="50%" h="580px" scrollBehavior="auto" ><Button>mens</Button><Button>womens</Button> 
-        <Box>
-        <div id={styles.mensPage_main_div}>
-          {mensData.length > 0 && mensData.map((item) => {
-            return (
+        <Box
+          style={{ overflow: "scroll" }}
+          w="50%"
+          h="580px"
+          scrollBehavior="auto"
+        >
+          <Button>mens</Button>
+          <Button>womens</Button>
+          <Box>
+            <div >
+              {mensData.length > 0 &&
+                mensData.map((item) => {
+                  return (
+                    <div key={item.id} >
+                      <Box></Box>
+                      <Box >
+                        <Input
+                          typo="text"
+                          value={item.brand_namez}
+                          onChange={() =>
+                            setProductupdate({
+                              ...productupdate,
+                              productImgTagSrc: e.target.value,
+                            })
+                          }
+                        />
+                        <Input type="text" placeholder={item.clr_shade_4} />
 
-              <div key={item.id} id={styles.mensPage_grid_boxez}>
-                <Box>
-                
-                </Box>
-                <Box id={styles.name_brand_div}>
-                  <h1 id={styles.product_brand}>{item.brand_namez}</h1>
-                  <h1 id={styles.product_name}>{item.clr_shade_4}</h1>
-                  <Box id={styles.price_div}>
-                    <h1 id={styles.discount_price}>₹{item.discount_price_box}</h1>
-                    <h1 id={styles.actual_price}>₹{item.actualPriceText}</h1>
-                  </Box>
-                  <Button onClick={() => (item)} ml="70px">update</Button>
-                  <Button onClick={() => (item)} ml="70px">active</Button>
-                  <Button bg="red" onClick={() => 
-        deleteDataFromCart(item.id)} ml="70px">Delete</Button>
-                </Box>
-              </div>
+                        <Input value={`₹${item.discount_price_box}`} />
+                        <Input value={item.actualPriceText} />
 
-            )
-          })}
-        </div></Box> </Box>
+                        <Button onClick={() => item} ml="70px">
+                          update
+                        </Button>
+                        <Button onClick={() => item} ml="70px">
+                          active
+                        </Button>
+                        <Button
+                          bg="red"
+                          onClick={() => deleteDataFromCart(item.id)}
+                          ml="70px"
+                        >
+                          Delete
+                        </Button>
+                      </Box>
+                    </div>
+                  );
+                })}
+            </div>
+          </Box>{" "}
+        </Box>
       </Box>
     </div>
   );
