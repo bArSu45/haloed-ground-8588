@@ -34,6 +34,7 @@ const AdminPage = () => {
                 // setProduct(res.data)
                 getMensData()
                 console.log(res.data)
+                alert("Add data successfully")
             }).catch((e) => {
                 console.log(e)
             })
