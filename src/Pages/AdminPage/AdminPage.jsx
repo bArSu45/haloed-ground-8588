@@ -27,11 +27,11 @@ import styles from "./AdminPage.module.css";
 const AdminPage = () => {
   var name = JSON.parse(localStorage.getItem("username"));
   const [mensData, setMensData] = useState([]);
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const initialRef = useRef(null)
-  const finalRef = useRef(null)
-   const [productupdate, setProductupdate] = useState({
+  // const initialRef = useRef(null);
+  // const finalRef = useRef(null);
+  const [productupdate, setProductupdate] = useState({
     col_sm_4_href: "",
     productImgTagSrc: "",
     plp: "SLIM FIT",
@@ -40,7 +40,6 @@ const AdminPage = () => {
     discountedPriceText: "",
     actualPriceText: "",
     discount_price_box: "",
-   
   });
   const [product, setProduct] = useState({
     col_sm_4_href: "",
@@ -75,7 +74,7 @@ const AdminPage = () => {
       .then((res) => {
         // setProduct(res.data)
         getMensData();
-        console.log(res.data);
+        // console.log(res.data);
         alert("Add data successfully");
       })
       .catch((e) => {
@@ -93,9 +92,11 @@ const AdminPage = () => {
     axios.delete(`https://clickandbuy-json-server.onrender.com/mensdata/${id}`);
   };
   const update = (id) => {
-   
-    // console.log(id)
-    axios.patch(`https://clickandbuy-json-server.onrender.com/mensdata/${id}`,productupdate);
+    console.log(id)
+    axios.patch(
+      `https://clickandbuy-json-server.onrender.com/mensdata/${id}`,
+      productupdate
+    );
   };
   return (
     <div id={styles.admin_header_main_div}>
@@ -170,25 +171,24 @@ const AdminPage = () => {
           <Button>mens</Button>
           <Button>womens</Button>
           <Box>
-            <div >
+            <div>
               {mensData.length > 0 &&
                 mensData.map((item) => {
                   return (
-                    <div key={item.id} >
-                      <Box></Box>
-                      <Box >
-                        <Input value={item.brand_namez}  />
-                        <Input type="text" placeholder={item.clr_shade_4} />
+                    <div key={item.id}>
+                      <Box>{item.brand_namez}</Box>
+                      <Box>
+                        
 
-                        <Input value={`₹${item.discount_price_box}`} />
-                        <Input value={item.actualPriceText} />
+                        <div>{item.clr_shade_4}</div>
 
-                        <Button onClick={onOpen}  ml="70px">
+                        <div>{`₹${item.discount_price_box}`}</div>
+
+                        <div>{item.actualPriceText} </div>
+                        <Button onClick={onOpen} ml="70px">
                           update
                         </Button>
-                        <Button  ml="70px">
-                          active
-                        </Button>
+                        <Button ml="70px">active</Button>
                         <Button
                           bg="red"
                           onClick={() => deleteDataFromCart(item.id)}
@@ -197,44 +197,51 @@ const AdminPage = () => {
                           Delete
                         </Button>
                         <Modal
-        initialFocusRef={initialRef}
-        finalFocusRef={finalRef}
-        isOpen={isOpen}
-        onClose={onClose}
-      >
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Create your account</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody pb={6}>
-            <FormControl>
-              <FormLabel>brand_namez</FormLabel>
-              <Input ref={initialRef} type="text"
-              placeholder='brand_namez'
-              name={productupdate.brand_namez}
-              value={productupdate.brand_namez}
-              onChange={(e) =>
-                setProductupdate({
-                  ...productupdate,
-                  brand_namez: e.target.value,
-                })
-              } />
-            </FormControl>
+                          // initialFocusRef={initialRef}
+                          // finalFocusRef={finalRef}
+                          isOpen={isOpen}
+                          onClose={onClose}
+                        >
+                          <ModalOverlay />
+                          <ModalContent>
+                            <ModalHeader>Create your account</ModalHeader>
+                            <ModalCloseButton />
+                            <ModalBody pb={6}>
+                              <FormControl>
+                                <FormLabel>brand_namez</FormLabel>
+                                <Input
+                                  
+                                  type="text"
+                                  placeholder="brand_namez"
+                                  name={productupdate.brand_namez}
+                                  value={productupdate.brand_namez}
+                                  onChange={(e) =>
+                                    setProductupdate({
+                                      ...productupdate,
+                                      brand_namez: e.target.value,
+                                    })
+                                  }
+                                />
+                              </FormControl>
 
-            <FormControl mt={4}>
-              <FormLabel>price</FormLabel>
-              <Input placeholder='price' />
-            </FormControl>
-          </ModalBody>
+                              <FormControl mt={4}>
+                                <FormLabel>price</FormLabel>
+                                <Input placeholder="price" />
+                              </FormControl>
+                            </ModalBody>
 
-          <ModalFooter>
-            <Button onClick={() => update(item.id)} colorScheme='blue' mr={3}>
-              Save
-            </Button>
-            <Button onClick={onClose}>Cancel</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+                            <ModalFooter>
+                              <Button
+                                onClick={update(item.id)}
+                                colorScheme="blue"
+                                mr={3}
+                              >
+                                Save
+                              </Button>
+                              <Button onClick={onClose}>Cancel</Button>
+                            </ModalFooter>
+                          </ModalContent>
+                        </Modal>
                       </Box>
                     </div>
                   );
@@ -243,7 +250,6 @@ const AdminPage = () => {
           </Box>{" "}
         </Box>
       </Box>
-      
     </div>
   );
 };
