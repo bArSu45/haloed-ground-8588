@@ -168,18 +168,21 @@ const [active, setActive] = useState(true);
                         <div>₹{item.discount_price_box}</div>
 
                         <div>₹{item.actualPriceText} </div>
+                        <Box justifyContent={"space-around"}>
                         <Link to={`/product/${item.id}`} >
-                          <Button bg={"teal"}> Edit</Button> 
+                          <Button color={"white"} bg={"teal"} _hover={{ bg:"#F9F5EB" ,color:"teal",border:"2px solid teal " }}> Edit</Button> 
                         </Link>
-                        {active?<Button bg="green" color={"white"} onClick={()=>setActive(false)} ml="70px">active</Button>:<Button bg="red.400" ml="70px" onClick={()=>setActive(true)}>Inctive</Button>}
+                        {active?<Button _hover={{ bg:"#F9F5EB" ,color:"green",border:"2px solid green " }} bg="green" color={"white"} onClick={()=>setActive(false)} ml="70px">active</Button>:<Button bg="red.400" ml="70px" onClick={()=>setActive(true)}>Inctive</Button>}
                         <Button
                           bg="red"
+                          color={"white"}
+                          _hover={{ bg:"#F9F5EB" ,color:"red",border:"2px solid red " }}
                           onClick={() => deleteDataFromCart(item.id)}
                           ml="70px"
                         >
                           Delete
                         </Button>
-                        
+                        </Box>
                       </Box>
                     </div>
                   );
