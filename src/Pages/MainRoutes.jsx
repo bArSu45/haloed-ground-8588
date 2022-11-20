@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router'
 import PrivateRoute from '../Components/PrivateRoute'
 
 import AdminPage from './AdminPage/AdminPage'
+import Edit from './AdminPage/Edit'
 import Aler from './Alert'
 import Alert from './Alert'
 import CartPage from './CartPage/CartPage'
@@ -29,7 +30,7 @@ const MainRoutes = () => {
             <Route path="/womens" element={<WomensPage />} />
             <Route path="/mens" element={<MensPage />} />
             <Route path="/admin" element={<AdminPage />} />
-           
+            <Route path="/product/:id" element={<Edit />} />
             <Route path="/cart" element={  <PrivateRoute><CartPage />  </PrivateRoute>} />
            
            
