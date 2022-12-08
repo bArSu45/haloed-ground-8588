@@ -80,7 +80,14 @@ const [active, setActive] = useState(true);
     // console.log(id)
     axios.delete(`https://clickandbuy-json-server.onrender.com/mensdata/${id}`);
   };
-  
+  const update = (id ) => {
+    console.log(id);
+    axios.patch(`https://clickandbuy-json-server.onrender.com/mensdata/${id}`, {
+      status:active,
+    }).then((r)=>{
+      console.log(r.data)
+    })
+  };
   return (
     <div id={styles.admin_header_main_div}>
       <div id={styles.admin_header}>
@@ -172,7 +179,14 @@ const [active, setActive] = useState(true);
                         <Link to={`/product/${item.id}`} >
                           <Button color={"white"} bg={"teal"} _hover={{ bg:"#F9F5EB" ,color:"teal",border:"2px solid teal " }}> Edit</Button> 
                         </Link>
-                        {active?<Button _hover={{ bg:"#F9F5EB" ,color:"green",border:"2px solid green " }} bg="green" color={"white"} onClick={()=>setActive(false)} ml="70px">active</Button>:<Button bg="red.400" ml="70px" onClick={()=>setActive(true)}>Inctive</Button>}
+                        {item.status?<Button _hover={{ bg:"#F9F5EB" ,color:"green",border:"2px solid green " }} bg="green" color={"white"} onClick={()=>{
+                          update(item.id);
+                          setActive(false)
+                          alert("Inactive")
+                          }} ml="70px">active</Button>
+                        :<Button bg="red.400" ml="70px" onClick={()=>{
+                          update(item.id);setActive(true)
+                          alert("active")}}>Inactive</Button>}
                         <Button
                           bg="red"
                           color={"white"}

@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { Box, Button, Select, Stack } from '@chakra-ui/react'
+import { Box, Button, Select, Stack, Text } from '@chakra-ui/react'
 import styles from './MensPage.module.css'
 import Navbar from '../../Components/Navbar'
 import { useDispatch, useSelector } from 'react-redux'
@@ -118,7 +118,7 @@ const [searchParams, setSearchParams] = useSearchParams();
           {musicRecords.length > 0 && musicRecords.map((item) => {
             return (
 
-              <div key={item.id} id={styles.mensPage_grid_boxez}>
+              <Box filter='auto' blur={ item.status&&'2px'} key={item.id} id={styles.mensPage_grid_boxez}>
                 <Box>
                   <img src={item.productImgTagSrc} alt="none" />
                 </Box>
@@ -129,9 +129,12 @@ const [searchParams, setSearchParams] = useSearchParams();
                     <h1 id={styles.discount_price}>₹{item.discount_price_box}</h1>
                     <h1 id={styles.actual_price}>₹{item.actualPriceText}</h1>
                   </Box>
-                  <Button onClick={() => addCartData(item)} ml="70px">Add to Cart</Button>
+                  {item.status?<Text color="red"> out of stock  </Text>:
+                  <Button disabled={item.status} onClick={() => addCartData(item)} ml="70px">Add to Cart</Button>
+                  
+                  }
                 </Box>
-              </div>
+              </Box>
 
             )
           })}

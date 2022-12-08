@@ -10,7 +10,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 349,
       "actualPriceText": 999,
-      "discount_price_box": 319
+      "discount_price_box": 319,
+      "status": true
     },
     {
       "id": 2,
@@ -22,7 +23,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 599,
       "actualPriceText": 149,
-      "discount_price_box": 559
+      "discount_price_box": 559,
+      "status": true
     },
     {
       "id": 3,
@@ -34,7 +36,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 599,
       "actualPriceText": 149,
-      "discount_price_box": 559
+      "discount_price_box": 559,
+      "status": true
     },
     {
       "id": 4,
@@ -46,7 +49,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 449,
       "actualPriceText": 129,
-      "discount_price_box": 419
+      "discount_price_box": 419,
+      "status": true
     },
     {
       "id": 5,
@@ -154,7 +158,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 582,
       "actualPriceText": 119,
-      "discount_price_box": 539
+      "discount_price_box": 539,
+      "status": true
     },
     {
       "id": 14,
@@ -166,7 +171,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 579,
       "actualPriceText": 849,
-      "discount_price_box": 529
+      "discount_price_box": 529,
+      "status": true
     },
     {
       "id": 15,
@@ -178,7 +184,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 428,
       "actualPriceText": 799,
-      "discount_price_box": 389
+      "discount_price_box": 389,
+      "status": false
     },
     {
       "id": 16,
@@ -318,7 +325,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 699,
       "actualPriceText": 949,
-      "discount_price_box": 639
+      "discount_price_box": 639,
+      "status": true
     },
     {
       "id": 27,
@@ -331,7 +339,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 499,
       "actualPriceText": 849,
-      "discount_price_box": 459
+      "discount_price_box": 459,
+      "status": true
     },
     {
       "id": 28,
@@ -344,7 +353,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 499,
       "actualPriceText": 849,
-      "discount_price_box": 459
+      "discount_price_box": 459,
+      "status": true
     },
     {
       "id": 29,
@@ -357,7 +367,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 582,
       "actualPriceText": 129,
-      "discount_price_box": 539
+      "discount_price_box": 539,
+      "status": true
     },
     {
       "id": 30,
@@ -383,7 +394,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 492,
       "actualPriceText": 104,
-      "discount_price_box": 449
+      "discount_price_box": 449,
+      "status": true
     },
     {
       "id": 32,
@@ -396,7 +408,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 403,
       "actualPriceText": 999,
-      "discount_price_box": 369
+      "discount_price_box": 369,
+      "status": true
     },
     {
       "id": 33,
@@ -409,7 +422,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 499,
       "actualPriceText": 849,
-      "discount_price_box": 459
+      "discount_price_box": 459,
+      "status": true
     },
     {
       "id": 34,
@@ -422,7 +436,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 499,
       "actualPriceText": 849,
-      "discount_price_box": 459
+      "discount_price_box": 459,
+      "status": true
     },
     {
       "id": 35,
@@ -1215,7 +1230,8 @@
       "wishlist-icon-animate-src": "https://images.bewakoof.com/web/Wishlist.svg",
       "discountedPriceText": 381,
       "actualPriceText": 999,
-      "discount_price_box": 349
+      "discount_price_box": 349,
+      "status": true
     },
     {
       "id": 96,
@@ -1391,7 +1407,8 @@
       "clr_shade_4": "Women's Black T-shirt",
       "discountedPriceText": 358,
       "actualPriceText": 999,
-      "discount_price_box": 329
+      "discount_price_box": 329,
+      "status": false
     },
     {
       "id": 5,
@@ -1402,7 +1419,8 @@
       "clr_shade_4": "White Round Neck 3/4th Sleeve T-Shirt",
       "discountedPriceText": 358,
       "actualPriceText": 999,
-      "discount_price_box": 329
+      "discount_price_box": 329,
+      "status": false
     },
     {
       "id": 6,
@@ -1413,7 +1431,8 @@
       "clr_shade_4": "Hello Sunshine Boyfriend T-Shirt Navy Blue",
       "discountedPriceText": 403,
       "actualPriceText": 109,
-      "discount_price_box": 369
+      "discount_price_box": 369,
+      "status": false
     },
     {
       "id": 7,
