@@ -6,6 +6,7 @@ import Navbar from '../../Components/Navbar';
 import styles from "./HomePage.module.css"
 
 export default function HomePage() {
+    
     return (
         <div id={styles.Home_main_div}>
             <Navbar1 />

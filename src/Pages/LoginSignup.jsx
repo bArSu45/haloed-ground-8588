@@ -59,7 +59,7 @@ const LoginSignup = () => {
 
   useEffect(() => {
     axios
-      .get("https://clickandbuy-json-server.onrender.com/userdata")
+      .get("https://clickandbuy.onrender.com/userdata")
       .then((res) => {
         setData(res.data);
       })

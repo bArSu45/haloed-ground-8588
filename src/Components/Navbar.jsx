@@ -184,7 +184,7 @@ const BottomNav = () => {
   var sts  = JSON.parse(localStorage.getItem("sts"));
   const [data,setData] = useState([])
   const getCartData = () =>{
-    axios.get("https://clickandbuy-json-server.onrender.com/cartdata")
+    axios.get("https://clickandbuy.onrender.com/cartdata")
     .then((res)=>{
       setData(res.data)
       // console.log(res.data)

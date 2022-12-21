@@ -45,7 +45,7 @@ const Edit = () => {
     // console.log(product)
     axios
       .patch(
-        `https://clickandbuy-json-server.onrender.com/mensdata/${id}`,
+        `https://clickandbuy.onrender.com/mensdata/${id}`,
         product
       )
       .then((res) => {

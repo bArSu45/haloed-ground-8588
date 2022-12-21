@@ -11,7 +11,7 @@ const CartProduct = ({id,qty,setQty,productImgTagSrc,clr_shade_4,discountedPrice
 // }
 const deleteDataFromCart = (id) =>{
   // console.log(id)
-  axios.delete(`https://clickandbuy-json-server.onrender.com/cartdata/${id}`)
+  axios.delete(`https://clickandbuy.onrender.com/cartdata/${id}`)
  getCartData()
 }
 useEffect(()=>{

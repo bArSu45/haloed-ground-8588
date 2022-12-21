@@ -16,8 +16,8 @@ export default function MensPage() {
   const location = useLocation();
 
   const addCartData = (data) => {
-    axios.post("https://clickandbuy-json-server.onrender.com/cartdata", data).then((r) => {
-
+    axios.post("https://clickandbuy.onrender.com/cartdata", data).then((r) => {
+    
       console.log(r.data)
     })
       .catch((e) => {

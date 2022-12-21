@@ -28,7 +28,7 @@ const Payment = () => {
     var email = JSON.parse(localStorage.getItem("email"))
     const navigate = useNavigate()
     const getCartData = () =>{
-      axios.get("https://clickandbuy-json-server.onrender.com/cartdata")
+      axios.get("https://clickandbuy.onrender.com/cartdata")
       .then((res)=>{
         setData(res.data)
         // console.log(res.data)

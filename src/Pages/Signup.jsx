@@ -63,7 +63,7 @@ status:true,
   const handleChange = (e) => {
     e.preventDefault();
     axios
-      .post(`https://clickandbuy-json-server.onrender.com/userdata`, userdata)
+      .post(`https://clickandbuy.onrender.com/userdata`, userdata)
       .then((res) => {
         // setProduct(res.data)
         // getMensData()

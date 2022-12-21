@@ -45,7 +45,7 @@ const [active, setActive] = useState(true);
 
   const getMensData = () => {
     axios
-      .get("https://clickandbuy-json-server.onrender.com/mensdata")
+      .get("https://clickandbuy.onrender.com/mensdata")
       .then((res) => {
         setMensData(res.data);
       })
@@ -59,7 +59,7 @@ const [active, setActive] = useState(true);
     e.preventDefault();
     // console.log(product)
     axios
-      .post(`https://clickandbuy-json-server.onrender.com/${category}`, product)
+      .post(`https://clickandbuy.onrender.com/${category}`, product)
       .then((res) => {
         // setProduct(res.data)
         getMensData();
@@ -78,11 +78,11 @@ const [active, setActive] = useState(true);
 
   const deleteDataFromCart = (id) => {
     // console.log(id)
-    axios.delete(`https://clickandbuy-json-server.onrender.com/mensdata/${id}`);
+    axios.delete(`https://clickandbuy.onrender.com/mensdata/${id}`);
   };
   const update = (id ) => {
     console.log(id);
-    axios.patch(`https://clickandbuy-json-server.onrender.com/mensdata/${id}`, {
+    axios.patch(`https://clickandbuy.onrender.com/mensdata/${id}`, {
       status:active,
     }).then((r)=>{
       console.log(r.data)
