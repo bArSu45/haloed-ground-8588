@@ -41,8 +41,8 @@ const CartPage = () => {
     useEffect(()=>{
       getCartData()
     },[])
-    console.log(user)
-    // console.log(data)
+    // console.log(user)
+    console.log(data.length)
     const subtotal = data.reduce((a, {discountedPriceText}) => a + (discountedPriceText * qty), 0);
     const totalMrp = data.reduce((a, {actualPriceText}) => a + (actualPriceText * qty), 0);
     const bagDiscount = data.reduce((a, {discount_price_box}) => a + (discount_price_box * qty), 0);
@@ -133,7 +133,7 @@ const CartPage = () => {
         <p>Total</p>
         <span>₹ {subtotal}</span>
         </div>
-       <button><Link to ="/payment" >CONTINUE</Link></button>
+       <button disabled={data.length==0}><Link to ="/payment" >CONTINUE</Link></button>
         </div>
     </div>
 </div>

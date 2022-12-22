@@ -29,7 +29,7 @@
 #ni9_img_div {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    padding: 20px;
+    padding: 20px 0px;
     width: 85%;
   margin: auto;
     gap: 20px;
