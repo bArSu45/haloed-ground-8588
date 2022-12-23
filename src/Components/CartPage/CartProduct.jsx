@@ -17,7 +17,7 @@ const deleteDataFromCart = (id) =>{
 useEffect(()=>{
   deleteDataFromCart()
  
-},[])
+},[getCartData,deleteDataFromCart])
 
 // const calculate =(e,discountedPriceText)=>{
 // setQty(qty * discountedPriceText)

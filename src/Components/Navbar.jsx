@@ -196,7 +196,7 @@ const BottomNav = () => {
   }
   useEffect(()=>{
     getCartData()
-  },[])
+  },[data])
   return (
     <>
       <div>
