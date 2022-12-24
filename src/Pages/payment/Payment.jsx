@@ -41,9 +41,11 @@ const Payment = () => {
     const subtotal = data.reduce((a, {discountedPriceText}) => a + discountedPriceText, 0);
     const totalMrp = data.reduce((a, {actualPriceText}) => a + actualPriceText, 0);
     const bagDiscount = data.reduce((a, {discount_price_box}) => a + discount_price_box, 0);
+   
     useEffect(()=>{
       getCartData()
       if(showAlert === true){
+       
       
         setTimeout(()=>{
          navigate("/")
