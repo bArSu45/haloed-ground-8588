@@ -38,6 +38,7 @@ const Payment = () => {
         setData(data)
       })
     }
+    
     const subtotal = data.reduce((a, {discountedPriceText}) => a + discountedPriceText, 0);
     const totalMrp = data.reduce((a, {actualPriceText}) => a + actualPriceText, 0);
     const bagDiscount = data.reduce((a, {discount_price_box}) => a + discount_price_box, 0);
@@ -116,7 +117,7 @@ const Payment = () => {
    </div>
    <div className={styles.card_form_button}>
     
-    <button onClick={()=>setShowAlert(true)}>Pay {subtotal}</button>
+    <button disabled = {data.length === 0} onClick={()=>setShowAlert(true)}>Pay {subtotal}</button>
     
    </div>
     </div>
@@ -124,8 +125,8 @@ const Payment = () => {
   </div>
   <div className={styles.payment_component_right}>
     <div className={styles.payment_component_address}>
-        <p>Delivering order to <b>Ravindra Kumar Yadav</b></p>
-       <p>54, rajiv nagar telibagh, Lucknowlucknow....</p>
+        <p>Delivering order to <b>{email}</b></p>
+       <p>54, rajiv nagar telibagh, Lucknow....</p>
     </div>
     <hr className={styles.hr}/>
     <div className={styles.payment_component_address}>

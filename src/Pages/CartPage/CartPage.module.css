@@ -123,11 +123,12 @@ padding: 10px;
    font-weight: 400;
    color: rgb(99, 98, 98);
 }
-.total>button{
+.totalBtn{
     background-color: teal;
     color: white;
     border: none;
     outline: none;
+    padding: 10px;
     padding-left: 90px;
     padding-right: 90px;
     border-radius: 8px;
