@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { Box, Button, Select, Stack, Text } from '@chakra-ui/react'
+import { Box, Button, Select, Stack, Text, useToast } from '@chakra-ui/react'
 import styles from './MensPage.module.css'
 import Navbar from '../../Components/Navbar'
 import { useDispatch, useSelector } from 'react-redux'
@@ -14,8 +14,15 @@ export default function MensPage() {
   const musicRecords = useSelector((store) => store.AppReducer.musicRecords)
   const dispatch = useDispatch()
   const location = useLocation();
+  const toast = useToast()
+
 
   const addCartData = (data) => {
+    toast({
+      title: `Product Added Successfully`,
+    
+      isClosable: true,
+    })
     axios.post("https://clickandbuy.onrender.com/cartdata", data).then((r) => {
     
       console.log(r.data)
@@ -41,6 +48,7 @@ export default function MensPage() {
 const [searchParams, setSearchParams] = useSearchParams();
     const [sortBy, setSortBy] = useState(searchParams.get("sortBy") || "")
     const [category, setCategory] = useState(searchParams.getAll("brand_namez") || []);
+   
 
     const HandleFilter = (e) => {
         const option = e.target.value
@@ -130,7 +138,7 @@ const [searchParams, setSearchParams] = useSearchParams();
                     <h1 id={styles.actual_price}>₹{item.actualPriceText}</h1>
                   </Box>
                   {item.status?<Text color="red"> out of stock  </Text>:
-                  <Button disabled={item.status} onClick={() => addCartData(item)} ml="70px">Add to Cart</Button>
+                  <Button  disabled={item.status} onClick={() => addCartData(item)} ml="70px">Add to Cart</Button>
                   
                   }
                 </Box>
