@@ -6,6 +6,7 @@ import {TbLetterC} from "react-icons/tb"
 import {FiShoppingBag,FiHeart,FiSearch} from "react-icons/fi"
 
 import "../App.css"
+import { Link } from "react-router-dom";
 
 
 
@@ -42,11 +43,12 @@ const Nav=()=>{
                 <TbLetterC/>
             </div>
             <div className={n.first_div}>
-                <FiSearch/>
+                <Link to="/mens"><FiSearch/></Link>
+               
 
                 
                 <FiHeart/>
-                <FiShoppingBag/>
+                <Link to="/cart" ><FiShoppingBag/></Link>
 
 
             </div>
